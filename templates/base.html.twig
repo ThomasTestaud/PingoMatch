@@ -14,15 +14,25 @@
         </style>
         {% block javascripts %}
         {% endblock %}
+        
     </head>
     <body>
-        <div class="mb-4">
-            <div class="text-center bg-primary text-white py-4">
-                <h1 class="display-4">PingoMatch</h1>
-                <p class="lead">Pôle de Rencontres</p>
-            </div>
-        </div>
+    <!--
+        -->
 
         {% block body %}{% endblock %}
+        <!-- Add these lines to your HTML file -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS (Popper.js is also required for dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize Bootstrap components
+        $('.navbar-toggler').on('click', function() {
+            $('.navbar-collapse').toggleClass('show');
+        });
+    });
+</script>
     </body>
 </html>

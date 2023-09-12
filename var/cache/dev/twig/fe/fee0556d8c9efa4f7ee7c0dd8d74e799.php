@@ -90,6 +90,13 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+
+<div class=\"mb-4\">
+            <div class=\"text-center bg-primary text-white py-4\">
+                <h1 class=\"display-4\">PingoMatch</h1>
+                <p class=\"lead\">Pôle de Rencontres</p>
+            </div>
+        </div>
 <div class=\"example-wrapper\">
     <form method=\"POST\" action=\"\">
         <div class=\"mb-3\">
@@ -145,6 +152,13 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+
+<div class=\"mb-4\">
+            <div class=\"text-center bg-primary text-white py-4\">
+                <h1 class=\"display-4\">PingoMatch</h1>
+                <p class=\"lead\">Pôle de Rencontres</p>
+            </div>
+        </div>
 <div class=\"example-wrapper\">
     <form method=\"POST\" action=\"\">
         <div class=\"mb-3\">

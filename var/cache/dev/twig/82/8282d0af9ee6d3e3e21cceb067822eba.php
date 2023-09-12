@@ -90,6 +90,13 @@ class __TwigTemplate_98b05711dd0b434d40295e6c0a1347c6 extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<div class=\"mb-4\">
+            <div class=\"text-center bg-primary text-white py-4\">
+                <h1 class=\"display-4\">PingoMatch</h1>
+                <p class=\"lead\">Pôle de Rencontres</p>
+            </div>
+        </div>
+
 <div class=\"example-wrapper\">
     <div>
         <label for=\"username\" class=\"form-label\">Username:</label>
@@ -97,8 +104,8 @@ class __TwigTemplate_98b05711dd0b434d40295e6c0a1347c6 extends Template
         <label for=\"password\" class=\"form-label\">Password:</label>
         <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\"><br>
         <p id=\"user-data\" style=\"display:none;\">";
-        // line 17
-        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 17, $this->source); })()), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 24, $this->source); })()), "html", null, true);
         echo "</p>
         <p style=\"color:red;\" id=\"errors\"></p>
         <button id=\"connect\" class=\"btn btn-primary\">Connexion</button>
@@ -157,7 +164,7 @@ class __TwigTemplate_98b05711dd0b434d40295e6c0a1347c6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -171,6 +178,13 @@ class __TwigTemplate_98b05711dd0b434d40295e6c0a1347c6 extends Template
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
+
+<div class=\"mb-4\">
+            <div class=\"text-center bg-primary text-white py-4\">
+                <h1 class=\"display-4\">PingoMatch</h1>
+                <p class=\"lead\">Pôle de Rencontres</p>
+            </div>
+        </div>
 
 <div class=\"example-wrapper\">
     <div>

@@ -67,20 +67,30 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         // line 15
         $this->displayBlock('javascripts', $context, $blocks);
         // line 17
-        echo "    </head>
+        echo "        
+    </head>
     <body>
-        <div class=\"mb-4\">
-            <div class=\"text-center bg-primary text-white py-4\">
-                <h1 class=\"display-4\">PingoMatch</h1>
-                <p class=\"lead\">Pôle de Rencontres</p>
-            </div>
-        </div>
+    <!--
+        -->
 
         ";
-        // line 26
+        // line 23
         $this->displayBlock('body', $context, $blocks);
-        // line 27
-        echo "    </body>
+        // line 24
+        echo "        <!-- Add these lines to your HTML file -->
+<!-- jQuery -->
+<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+<!-- Bootstrap JS (Popper.js is also required for dropdowns) -->
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js\"></script>
+<script>
+    \$(document).ready(function() {
+        // Initialize Bootstrap components
+        \$('.navbar-toggler').on('click', function() {
+            \$('.navbar-collapse').toggleClass('show');
+        });
+    });
+</script>
+    </body>
 </html>
 ";
         
@@ -150,7 +160,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 26
+    // line 23
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -175,7 +185,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     public function getDebugInfo()
     {
-        return array (  154 => 26,  144 => 16,  134 => 15,  124 => 9,  114 => 8,  95 => 5,  83 => 27,  81 => 26,  70 => 17,  68 => 15,  61 => 10,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  164 => 23,  154 => 16,  144 => 15,  134 => 9,  124 => 8,  105 => 5,  80 => 24,  78 => 23,  70 => 17,  68 => 15,  61 => 10,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -196,16 +206,26 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         </style>
         {% block javascripts %}
         {% endblock %}
+        
     </head>
     <body>
-        <div class=\"mb-4\">
-            <div class=\"text-center bg-primary text-white py-4\">
-                <h1 class=\"display-4\">PingoMatch</h1>
-                <p class=\"lead\">Pôle de Rencontres</p>
-            </div>
-        </div>
+    <!--
+        -->
 
         {% block body %}{% endblock %}
+        <!-- Add these lines to your HTML file -->
+<!-- jQuery -->
+<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+<!-- Bootstrap JS (Popper.js is also required for dropdowns) -->
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js\"></script>
+<script>
+    \$(document).ready(function() {
+        // Initialize Bootstrap components
+        \$('.navbar-toggler').on('click', function() {
+            \$('.navbar-collapse').toggleClass('show');
+        });
+    });
+</script>
     </body>
 </html>
 ", "base.html.twig", "C:\\wamp64\\www\\C_O_D_E\\Pingo_Match\\PingoMatch\\templates\\base.html.twig");

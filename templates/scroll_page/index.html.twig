@@ -41,8 +41,31 @@
     }
 </style>
 
-<a href="/mached" class="btn btn-primary">Voir vos matchs</a>
-<a href="/login" class="btn btn-danger">Déconnexion</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">PingoMatch</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn" href="/mached">Vos matchs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn" href="/profile">Votre profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger" href="/login">Déconnexion</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="example-wrapper">
     <p class="text-center pt-5">Vous avez parcouru tous les utilisateurs...</p>
     {% for item in users %}

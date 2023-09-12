@@ -129,13 +129,35 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         display: none !important;
     }
 </style>
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                </li>
 
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class=\"example-wrapper\">
-    <a href=\"/\" class=\"btn btn-primary\">Accueil</a>
-    <a href=\"/login\" class=\"btn btn-danger\">Déconnexion</a>
     <p id=\"user-data\" style=\"display:none;\">";
-        // line 54
-        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 54, $this->source); })()), "html", null, true);
+        // line 76
+        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 76, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"display\">
     </div>
@@ -218,7 +240,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 
     public function getDebugInfo()
     {
-        return array (  138 => 54,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  160 => 76,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -272,10 +294,32 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         display: none !important;
     }
 </style>
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                </li>
 
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class=\"example-wrapper\">
-    <a href=\"/\" class=\"btn btn-primary\">Accueil</a>
-    <a href=\"/login\" class=\"btn btn-danger\">Déconnexion</a>
     <p id=\"user-data\" style=\"display:none;\">{{users}}<p>
     <div id=\"display\">
     </div>

@@ -90,20 +90,45 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class=\"example-wrapper\">
     <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
+        // line 37
+        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 37, $this->source); })()), "html", null, true);
         echo "! ✅</h1>
 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href=\"";
-        // line 16
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/src/Controller/ProfileController.php", 0), "html", null, true);
         echo "\">src/Controller/ProfileController.php</a></code></li>
         <li>Your template at <code><a href=\"";
-        // line 17
+        // line 42
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/templates/profile/index.html.twig", 0), "html", null, true);
         echo "\">templates/profile/index.html.twig</a></code></li>
     </ul>
@@ -129,7 +154,7 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  132 => 42,  128 => 41,  121 => 37,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -144,6 +169,31 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class=\"example-wrapper\">
     <h1>Hello {{ controller_name }}! ✅</h1>
 

@@ -123,31 +123,54 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     }
 </style>
 
-<a href=\"/mached\" class=\"btn btn-primary\">Voir vos matchs</a>
-<a href=\"/login\" class=\"btn btn-danger\">Déconnexion</a>
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 48
+        // line 71
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 48, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 71, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 49
+            // line 72
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 50
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 50), "html", null, true);
+            // line 73
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 73), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 50), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 73), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 52), "html", null, true);
+            // line 75
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 75), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 53), "html", null, true);
+            // line 76
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 76), "html", null, true);
             echo "</p>
             <div class=\"\">
                 <button class=\"btn btn-success like-btn\">Like</button>
@@ -160,7 +183,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
+        // line 84
         echo "</div>
 
 <script>
@@ -210,7 +233,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     public function getDebugInfo()
     {
-        return array (  164 => 61,  150 => 53,  146 => 52,  139 => 50,  136 => 49,  132 => 48,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  187 => 84,  173 => 76,  169 => 75,  162 => 73,  159 => 72,  155 => 71,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -258,8 +281,31 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     }
 </style>
 
-<a href=\"/mached\" class=\"btn btn-primary\">Voir vos matchs</a>
-<a href=\"/login\" class=\"btn btn-danger\">Déconnexion</a>
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     {% for item in users %}
