@@ -134,8 +134,56 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         text-align: center;
     }
 
+    .animation {
+        position: fixed;
+        z-index: 3;
+        height: 150px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        left: 50%;
+        top: 150px;
+        animation: animate 1.1s;
+    }
+
+    .like {
+        border: 10px solid green;
+        color: green;
+    }
+
+    .dislike {
+        border: 10px solid red;
+        color: red;
+    }
+
+    .animation svg {
+        height: 100px;
+        width: 100px;
+    }
+
     .none {
         display: none;
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            transform: rotate(10deg) translate(-50%, 20%) scale(0.5);
+        }
+        30% {
+            opacity: 1;
+            transform: rotate(0deg) translate(-50%, 0%) scale(1);
+        }
+        80% {
+            opacity: 1;
+            transform: rotate(0deg) translate(-50%, 0%) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, 0%) scale(0.5);
+        }
     }
 
 </style>
@@ -168,30 +216,30 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 88
+        // line 136
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 88, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 136, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 89
+            // line 137
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 90
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 90), "html", null, true);
+            // line 138
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 138), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 90), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 138), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 92
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 92), "html", null, true);
+            // line 140
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 140), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 93
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 93), "html", null, true);
+            // line 141
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 141), "html", null, true);
             echo "</p>
             <div class=\"\">
-                <button class=\"btn btn-success like-btn\">Like</button>
                 <button class=\"btn btn-danger btnlike-btn\">Dislike</button>
+                <button class=\"btn btn-success like-btn\">Like</button>
             </div>
         </div>
     </div>
@@ -200,10 +248,11 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 101
+        // line 149
         echo "    <p id=\"user-data\" style=\"display:none;\">";
-        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 101, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 149, $this->source); })()), "html", null, true);
         echo "<p>
+    <div id=\"animDisplay\"></div>
 </div>
 
 <script>
@@ -213,23 +262,29 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     const pingoName = document.querySelectorAll('.pingo-name');
     const myUser = localStorage.getItem('myUser');
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
+    const animDisplay = document.getElementById('animDisplay');
     let matchedArray = [];
 
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            setTimeout(() => {
             scrollCard[index].classList.add('none');
+        }, 1000);
             
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
             console.log(localStorage.getItem(\"matched\"));
+            likePingo();
         });
     });
 
     dislikeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            setTimeout(() => {
             scrollCard[index].classList.add('none');
-            console.log(el.Name);
+        }, 1000);
+            dislike();
         });
     });
     
@@ -237,7 +292,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     scrollCard.forEach((card, index) => {
         if (userData[index].Name === myUser) {
             scrollCard[index].classList.add('none');
-            console.log('doublon');
+            //console.log('doublon');
         }
     });
 
@@ -249,7 +304,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 let e = window.event;
                 var posX = e.clientX;
                 var posY = e.clientY;
-                card.style = ` left: \${posX}px;`;
+                card.style = `left: \${posX-150}px;top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;transform: rotate(\${(posX-offset)/40}deg);`;
                 let ww = window.innerWidth;
                 console.log(posX - offset);
                 
@@ -258,11 +313,13 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                     matchedArray.push(pingoName[index].innerHTML);
                     localStorage.setItem(\"matched\", matchedArray);
                     mouseClick = false;
+                    likePingo();
                 }
                 
                 if(posX-offset < -200) {
                     scrollCard[index].classList.add('none');
                     mouseClick = false;
+                    dislike();
                 }
                 
             }
@@ -280,6 +337,30 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
             offset = null;
         })
     });
+
+    function likePingo() {
+        animDisplay.innerHTML = `
+        <div class=\"animation like\">
+        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\" /></svg>
+        </div>
+        `;
+        setTimeout(() => {
+            animDisplay.innerHTML = '';
+        }, 1000);
+    }
+
+    function dislike() {
+        animDisplay.innerHTML = `
+        <div class=\"animation dislike\">
+<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
+  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
+</svg>
+        </div>
+        `;
+        setTimeout(() => {
+            animDisplay.innerHTML = '';
+        }, 1000);
+    }
 
 </script>
 ";
@@ -303,7 +384,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     public function getDebugInfo()
     {
-        return array (  204 => 101,  190 => 93,  186 => 92,  179 => 90,  176 => 89,  172 => 88,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  252 => 149,  238 => 141,  234 => 140,  227 => 138,  224 => 137,  220 => 136,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -362,8 +443,56 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         text-align: center;
     }
 
+    .animation {
+        position: fixed;
+        z-index: 3;
+        height: 150px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        left: 50%;
+        top: 150px;
+        animation: animate 1.1s;
+    }
+
+    .like {
+        border: 10px solid green;
+        color: green;
+    }
+
+    .dislike {
+        border: 10px solid red;
+        color: red;
+    }
+
+    .animation svg {
+        height: 100px;
+        width: 100px;
+    }
+
     .none {
         display: none;
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            transform: rotate(10deg) translate(-50%, 20%) scale(0.5);
+        }
+        30% {
+            opacity: 1;
+            transform: rotate(0deg) translate(-50%, 0%) scale(1);
+        }
+        80% {
+            opacity: 1;
+            transform: rotate(0deg) translate(-50%, 0%) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, 0%) scale(0.5);
+        }
     }
 
 </style>
@@ -402,13 +531,14 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
             <h2 class=\"card-title pingo-name\">{{ item.Name }}</h2>
             <p class=\"card-text\">{{ item.Description }}</p>
             <div class=\"\">
-                <button class=\"btn btn-success like-btn\">Like</button>
                 <button class=\"btn btn-danger btnlike-btn\">Dislike</button>
+                <button class=\"btn btn-success like-btn\">Like</button>
             </div>
         </div>
     </div>
     {% endfor %}
     <p id=\"user-data\" style=\"display:none;\">{{usersJson}}<p>
+    <div id=\"animDisplay\"></div>
 </div>
 
 <script>
@@ -418,23 +548,29 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     const pingoName = document.querySelectorAll('.pingo-name');
     const myUser = localStorage.getItem('myUser');
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
+    const animDisplay = document.getElementById('animDisplay');
     let matchedArray = [];
 
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            setTimeout(() => {
             scrollCard[index].classList.add('none');
+        }, 1000);
             
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
             console.log(localStorage.getItem(\"matched\"));
+            likePingo();
         });
     });
 
     dislikeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            setTimeout(() => {
             scrollCard[index].classList.add('none');
-            console.log(el.Name);
+        }, 1000);
+            dislike();
         });
     });
     
@@ -442,7 +578,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     scrollCard.forEach((card, index) => {
         if (userData[index].Name === myUser) {
             scrollCard[index].classList.add('none');
-            console.log('doublon');
+            //console.log('doublon');
         }
     });
 
@@ -454,7 +590,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 let e = window.event;
                 var posX = e.clientX;
                 var posY = e.clientY;
-                card.style = ` left: \${posX}px;`;
+                card.style = `left: \${posX-150}px;top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;transform: rotate(\${(posX-offset)/40}deg);`;
                 let ww = window.innerWidth;
                 console.log(posX - offset);
                 
@@ -463,11 +599,13 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                     matchedArray.push(pingoName[index].innerHTML);
                     localStorage.setItem(\"matched\", matchedArray);
                     mouseClick = false;
+                    likePingo();
                 }
                 
                 if(posX-offset < -200) {
                     scrollCard[index].classList.add('none');
                     mouseClick = false;
+                    dislike();
                 }
                 
             }
@@ -485,6 +623,30 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
             offset = null;
         })
     });
+
+    function likePingo() {
+        animDisplay.innerHTML = `
+        <div class=\"animation like\">
+        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 12.75l6 6 9-13.5\" /></svg>
+        </div>
+        `;
+        setTimeout(() => {
+            animDisplay.innerHTML = '';
+        }, 1000);
+    }
+
+    function dislike() {
+        animDisplay.innerHTML = `
+        <div class=\"animation dislike\">
+<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
+  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
+</svg>
+        </div>
+        `;
+        setTimeout(() => {
+            animDisplay.innerHTML = '';
+        }, 1000);
+    }
 
 </script>
 {% endblock %}
