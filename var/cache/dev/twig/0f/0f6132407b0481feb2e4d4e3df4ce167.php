@@ -106,6 +106,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         overflow: hidden;
         left: 50%;
         transform: translate(-50%, 0%);
+        user-select: none;
     }
     
     h2 {
@@ -117,10 +118,12 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         height: 300px;
         object-fit: contain;
         transition: transform 0.3s;
+         pointer-events: none; 
+         user-select: none;
     }
 
     img:hover {
-        transform: scale(1.05) rotate(2deg);
+        transform: scale(1.02) rotate(1deg);
     }
 
     .card-body {
@@ -134,6 +137,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     .none {
         display: none;
     }
+
 </style>
 
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
@@ -164,26 +168,26 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 84
+        // line 88
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 84, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 88, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 85
+            // line 89
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 86
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 86), "html", null, true);
+            // line 90
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 90), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 86), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 90), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 88
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 88), "html", null, true);
+            // line 92
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 92), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 89
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 89), "html", null, true);
+            // line 93
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 93), "html", null, true);
             echo "</p>
             <div class=\"\">
                 <button class=\"btn btn-success like-btn\">Like</button>
@@ -196,8 +200,11 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 97
-        echo "</div>
+        // line 101
+        echo "    <p id=\"user-data\" style=\"display:none;\">";
+        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 101, $this->source); })()), "html", null, true);
+        echo "<p>
+</div>
 
 <script>
     const scrollCard = document.querySelectorAll('.scroll-card');
@@ -205,7 +212,9 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     const dislikeBtn = document.querySelectorAll('.btnlike-btn');
     const pingoName = document.querySelectorAll('.pingo-name');
     const myUser = localStorage.getItem('myUser');
+    let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     let matchedArray = [];
+
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -222,6 +231,54 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
             scrollCard[index].classList.add('none');
             console.log(el.Name);
         });
+    });
+    
+    userData = JSON.parse(userData);
+    scrollCard.forEach((card, index) => {
+        if (userData[index].Name === myUser) {
+            scrollCard[index].classList.add('none');
+            console.log('doublon');
+        }
+    });
+
+    let mouseClick = false;
+    let offset = null;
+    scrollCard.forEach((card, index) => {
+        card.addEventListener('mousemove', () => {
+            if (mouseClick) {
+                let e = window.event;
+                var posX = e.clientX;
+                var posY = e.clientY;
+                card.style = ` left: \${posX}px;`;
+                let ww = window.innerWidth;
+                console.log(posX - offset);
+                
+                if(posX-offset > 200) {
+                    scrollCard[index].classList.add('none');
+                    matchedArray.push(pingoName[index].innerHTML);
+                    localStorage.setItem(\"matched\", matchedArray);
+                    mouseClick = false;
+                }
+                
+                if(posX-offset < -200) {
+                    scrollCard[index].classList.add('none');
+                    mouseClick = false;
+                }
+                
+            }
+
+        })
+        card.addEventListener('mousedown', () => {
+            mouseClick = true;
+
+            let e = window.event;
+            var posX = e.clientX;
+            offset = posX;
+        })
+        card.addEventListener('mouseup', () => {
+            mouseClick = false;
+            offset = null;
+        })
     });
 
 </script>
@@ -246,7 +303,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     public function getDebugInfo()
     {
-        return array (  200 => 97,  186 => 89,  182 => 88,  175 => 86,  172 => 85,  168 => 84,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  204 => 101,  190 => 93,  186 => 92,  179 => 90,  176 => 89,  172 => 88,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -277,6 +334,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         overflow: hidden;
         left: 50%;
         transform: translate(-50%, 0%);
+        user-select: none;
     }
     
     h2 {
@@ -288,10 +346,12 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         height: 300px;
         object-fit: contain;
         transition: transform 0.3s;
+         pointer-events: none; 
+         user-select: none;
     }
 
     img:hover {
-        transform: scale(1.05) rotate(2deg);
+        transform: scale(1.02) rotate(1deg);
     }
 
     .card-body {
@@ -305,6 +365,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     .none {
         display: none;
     }
+
 </style>
 
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
@@ -347,6 +408,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         </div>
     </div>
     {% endfor %}
+    <p id=\"user-data\" style=\"display:none;\">{{usersJson}}<p>
 </div>
 
 <script>
@@ -355,7 +417,9 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     const dislikeBtn = document.querySelectorAll('.btnlike-btn');
     const pingoName = document.querySelectorAll('.pingo-name');
     const myUser = localStorage.getItem('myUser');
+    let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     let matchedArray = [];
+
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -372,6 +436,54 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
             scrollCard[index].classList.add('none');
             console.log(el.Name);
         });
+    });
+    
+    userData = JSON.parse(userData);
+    scrollCard.forEach((card, index) => {
+        if (userData[index].Name === myUser) {
+            scrollCard[index].classList.add('none');
+            console.log('doublon');
+        }
+    });
+
+    let mouseClick = false;
+    let offset = null;
+    scrollCard.forEach((card, index) => {
+        card.addEventListener('mousemove', () => {
+            if (mouseClick) {
+                let e = window.event;
+                var posX = e.clientX;
+                var posY = e.clientY;
+                card.style = ` left: \${posX}px;`;
+                let ww = window.innerWidth;
+                console.log(posX - offset);
+                
+                if(posX-offset > 200) {
+                    scrollCard[index].classList.add('none');
+                    matchedArray.push(pingoName[index].innerHTML);
+                    localStorage.setItem(\"matched\", matchedArray);
+                    mouseClick = false;
+                }
+                
+                if(posX-offset < -200) {
+                    scrollCard[index].classList.add('none');
+                    mouseClick = false;
+                }
+                
+            }
+
+        })
+        card.addEventListener('mousedown', () => {
+            mouseClick = true;
+
+            let e = window.event;
+            var posX = e.clientX;
+            offset = posX;
+        })
+        card.addEventListener('mouseup', () => {
+            mouseClick = false;
+            offset = null;
+        })
     });
 
 </script>

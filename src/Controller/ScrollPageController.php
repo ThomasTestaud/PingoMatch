@@ -17,9 +17,11 @@ class ScrollPageController extends AbstractController
         // Check if the file exists before attempting to read it
         if (file_exists($jsonFilePath)) {
             $users = file_get_contents($jsonFilePath);
+            $usersJson = json_encode($users);
 
             return $this->render('scroll_page/index.html.twig', [
                 'users' => json_decode($users),
+                'usersJson' => $usersJson
             ]);
         } else {
             // Handle the case where the JSON file does not exist

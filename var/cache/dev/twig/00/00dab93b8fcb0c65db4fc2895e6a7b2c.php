@@ -93,6 +93,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         align-items: center;
         padding: 10px;
         cursor: pointer;
+        transition: background-color 0.2s;
     }
 
     .matched-line:hover {
@@ -156,8 +157,8 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 </nav>
 <div class=\"example-wrapper\">
     <p id=\"user-data\" style=\"display:none;\">";
-        // line 76
-        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 76, $this->source); })()), "html", null, true);
+        // line 77
+        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 77, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"display\">
     </div>
@@ -240,7 +241,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 
     public function getDebugInfo()
     {
-        return array (  160 => 76,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  161 => 77,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -258,6 +259,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         align-items: center;
         padding: 10px;
         cursor: pointer;
+        transition: background-color 0.2s;
     }
 
     .matched-line:hover {

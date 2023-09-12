@@ -6,6 +6,26 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        margin: auto;
+    }
+    #display {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    p {
+        text-decoration: underline;
+    }
+
+    h2, h3 {
+        margin-left: 20px;
+    }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,12 +54,25 @@
     </div>
 </nav>
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/src/Controller/ProfileController.php'|file_link(0) }}">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/templates/profile/index.html.twig'|file_link(0) }}">templates/profile/index.html.twig</a></code></li>
-    </ul>
+    <p id="user-data" style="display:none;">{{users}}<p>
+    <div id="display"></div>
 </div>
+
+<script>
+    const display = document.getElementById('display');
+    const userData = JSON.parse(document.getElementById('user-data').innerHTML);
+    let myUser = localStorage.getItem('myUser');
+
+    myUser = userData.find((user) => user.Name === myUser);
+    console.log(myUser);
+
+    display.innerHTML = `
+        <img src="${myUser.img}"/>
+        <p>Votre nom : </p>
+        <h2>${myUser.Name}</h2>
+        <p>Votre description : </p>
+        <h3>${myUser.Description}</h3>
+    `;
+
+</script>
 {% endblock %}

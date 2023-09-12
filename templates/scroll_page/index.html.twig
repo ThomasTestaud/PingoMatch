@@ -24,6 +24,7 @@
         overflow: hidden;
         left: 50%;
         transform: translate(-50%, 0%);
+        user-select: none;
     }
     
     h2 {
@@ -35,10 +36,12 @@
         height: 300px;
         object-fit: contain;
         transition: transform 0.3s;
+         pointer-events: none; 
+         user-select: none;
     }
 
     img:hover {
-        transform: scale(1.05) rotate(2deg);
+        transform: scale(1.02) rotate(1deg);
     }
 
     .card-body {
@@ -95,6 +98,7 @@
         </div>
     </div>
     {% endfor %}
+    <p id="user-data" style="display:none;">{{usersJson}}<p>
 </div>
 
 <script>
@@ -103,7 +107,9 @@
     const dislikeBtn = document.querySelectorAll('.btnlike-btn');
     const pingoName = document.querySelectorAll('.pingo-name');
     const myUser = localStorage.getItem('myUser');
+    let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     let matchedArray = [];
+
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -120,6 +126,54 @@
             scrollCard[index].classList.add('none');
             console.log(el.Name);
         });
+    });
+    
+    userData = JSON.parse(userData);
+    scrollCard.forEach((card, index) => {
+        if (userData[index].Name === myUser) {
+            scrollCard[index].classList.add('none');
+            console.log('doublon');
+        }
+    });
+
+    let mouseClick = false;
+    let offset = null;
+    scrollCard.forEach((card, index) => {
+        card.addEventListener('mousemove', () => {
+            if (mouseClick) {
+                let e = window.event;
+                var posX = e.clientX;
+                var posY = e.clientY;
+                card.style = ` left: ${posX}px;`;
+                let ww = window.innerWidth;
+                console.log(posX - offset);
+                
+                if(posX-offset > 200) {
+                    scrollCard[index].classList.add('none');
+                    matchedArray.push(pingoName[index].innerHTML);
+                    localStorage.setItem("matched", matchedArray);
+                    mouseClick = false;
+                }
+                
+                if(posX-offset < -200) {
+                    scrollCard[index].classList.add('none');
+                    mouseClick = false;
+                }
+                
+            }
+
+        })
+        card.addEventListener('mousedown', () => {
+            mouseClick = true;
+
+            let e = window.event;
+            var posX = e.clientX;
+            offset = posX;
+        })
+        card.addEventListener('mouseup', () => {
+            mouseClick = false;
+            offset = null;
+        })
     });
 
 </script>

@@ -88,6 +88,26 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
         echo "<style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        margin: auto;
+    }
+    #display {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    p {
+        text-decoration: underline;
+    }
+
+    h2, h3 {
+        margin-left: 20px;
+    }
 </style>
 
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
@@ -116,23 +136,30 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
     </div>
 </nav>
 <div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 37
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 37, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 41
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/src/Controller/ProfileController.php", 0), "html", null, true);
-        echo "\">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 42
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/templates/profile/index.html.twig", 0), "html", null, true);
-        echo "\">templates/profile/index.html.twig</a></code></li>
-    </ul>
+    <p id=\"user-data\" style=\"display:none;\">";
+        // line 57
+        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 57, $this->source); })()), "html", null, true);
+        echo "<p>
+    <div id=\"display\"></div>
 </div>
+
+<script>
+    const display = document.getElementById('display');
+    const userData = JSON.parse(document.getElementById('user-data').innerHTML);
+    let myUser = localStorage.getItem('myUser');
+
+    myUser = userData.find((user) => user.Name === myUser);
+    console.log(myUser);
+
+    display.innerHTML = `
+        <img src=\"\${myUser.img}\"/>
+        <p>Votre nom : </p>
+        <h2>\${myUser.Name}</h2>
+        <p>Votre description : </p>
+        <h3>\${myUser.Description}</h3>
+    `;
+
+</script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -154,7 +181,7 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
 
     public function getDebugInfo()
     {
-        return array (  132 => 42,  128 => 41,  121 => 37,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  141 => 57,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -167,6 +194,26 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        margin: auto;
+    }
+    #display {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    p {
+        text-decoration: underline;
+    }
+
+    h2, h3 {
+        margin-left: 20px;
+    }
 </style>
 
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
@@ -195,14 +242,27 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
     </div>
 </nav>
 <div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/src/Controller/ProfileController.php'|file_link(0) }}\">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/wamp64/www/C_O_D_E/Pingo_Match/PingoMatch/templates/profile/index.html.twig'|file_link(0) }}\">templates/profile/index.html.twig</a></code></li>
-    </ul>
+    <p id=\"user-data\" style=\"display:none;\">{{users}}<p>
+    <div id=\"display\"></div>
 </div>
+
+<script>
+    const display = document.getElementById('display');
+    const userData = JSON.parse(document.getElementById('user-data').innerHTML);
+    let myUser = localStorage.getItem('myUser');
+
+    myUser = userData.find((user) => user.Name === myUser);
+    console.log(myUser);
+
+    display.innerHTML = `
+        <img src=\"\${myUser.img}\"/>
+        <p>Votre nom : </p>
+        <h2>\${myUser.Name}</h2>
+        <p>Votre description : </p>
+        <h3>\${myUser.Description}</h3>
+    `;
+
+</script>
 {% endblock %}
 ", "profile/index.html.twig", "C:\\wamp64\\www\\C_O_D_E\\Pingo_Match\\PingoMatch\\templates\\profile\\index.html.twig");
     }
