@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MachedController!{% endblock %}
+
+{% block body %}
+<style>
+    
+
+    .matched-line {
+        display: flex;
+        align-items: center;
+    }
+
+    .matched-line + .matched-line {
+        border-top: 1px dashed grey;
+    }
+
+    img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    #pop-up {
+        position: fixed;
+        z-index: 2;
+        border: 1px solid black;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        top: 3vh;
+        width: 90vw;
+        height: 90vh;
+        background-color: white;
+    }
+
+    .none {
+        display: none !important;
+    }
+</style>
+
+<div class="example-wrapper">
+    <a href="/">Accueil</a>
+    <a href="/login">Deconnexion</a>
+    <p id="user-data" style="display:none;">{{users}}<p>
+    <div id="display">
+    </div>
+    <div id="pop-up" class="none"></div>
+</div>
+
+<script>
+    const display = document.getElementById('display');
+    const popUp = document.getElementById('pop-up');
+    const userData = JSON.parse(document.getElementById('user-data').innerHTML);
+    const matched = localStorage.getItem('matched').split(',').map(item => item.trim());
+
+    let list = "";
+
+    userData.forEach((allData) => {
+        matched.forEach((maEl) => {
+            if(allData.Name === maEl) {
+                list += `
+                    <div class="matched-line">
+                        <img src="${allData.img}"/>
+                        <h3 class="name">${allData.Name}</h3>
+                    </div>`;
+            }
+        })
+    });
+
+    display.innerHTML = list;
+
+    const guys = document.querySelectorAll('.matched-line');
+    const names = document.querySelectorAll('.name');
+
+    let count = 0;
+    guys.forEach((guy, index) => {
+        guy.addEventListener('click', () => {
+            let popupContent = '';
+
+            popUp.classList.remove('none');
+
+            userData.forEach((allData) => {
+                if(allData.Name === names[index].innerHTML) {
+                popupContent += `
+                    <h2 id="cross">X</h2>
+                    <img src="${allData.img}"/>
+                    <h3 class="name">${allData.Name}</h3>
+                    <p>${allData.Description}</p>
+                    `;
+            }
+            });
+            
+            popUp.innerHTML = popupContent;
+           
+            const cross = document.getElementById('cross');
+            cross.addEventListener('click', () => {
+                popUp.classList.add('none');
+                popUp.innerHTML = "";
+            })
+        })
+    })
+
+
+</script>
+{% endblock %}

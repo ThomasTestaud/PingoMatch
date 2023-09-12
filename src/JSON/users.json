@@ -1,0 +1,38 @@
+[
+    {
+        "Name": "Joe",
+        "img": "https://robotdog.thomastestaud.com/mancho/i.png",
+        "Password": "password",
+        "Description": "J'aime les glaces"
+    },
+    {
+        "Name": "Bob",
+        "img": "https://robotdog.thomastestaud.com/mancho/h.png",
+        "Password": "password",
+        "Description": "Je fais de la luge"
+    },
+    {
+        "Name": "John",
+        "img": "https://robotdog.thomastestaud.com/mancho/r.png",
+        "Password": "password",
+        "Description": "J'aime pas le ski"
+    },
+    {
+        "Name": "Francis",
+        "img": "https://robotdog.thomastestaud.com/mancho/g.png",
+        "Password": "password",
+        "Description": "J'aime les glaces"
+    },
+    {
+        "Name": "Bernard",
+        "img": "https://robotdog.thomastestaud.com/mancho/p.png",
+        "Password": "password",
+        "Description": "Je fais de la luge"
+    },
+    {
+        "Name": "Jack",
+        "img": "https://robotdog.thomastestaud.com/mancho/n.png",
+        "Password": "password",
+        "Description": "J'aime pas le ski"
+    }
+]

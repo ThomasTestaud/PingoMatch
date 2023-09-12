@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ScrollPageController!{% endblock %}
+
+{% block body %}
+<style>
+
+    .example-wrapper {
+        position: relative;
+    }
+
+    .scroll-card {
+        position: absolute;
+        box-shadow: 2px 2px 2px;
+        border-radius: 15px;
+        background-color: white;
+        width: 300px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top: 10px;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    
+    h2 {
+        margin: 1px;
+        
+    }
+
+    .scroll-card img {
+        height: 300px;
+        object-fit: contain;
+    }
+
+    .none {
+        display: none;
+    }
+</style>
+
+<a href="/mached">Voir vos matchs</a>
+<a href="/login">Deconnexion</a>
+<div class="example-wrapper">
+    <p style="padding-top: 100px;width: 200px; margin:auto;">Vous avez parcourus tout les utilisateurs...</p>
+    {% for item in users %}
+    <div class="scroll-card">
+        <img src="{{ item.img }}">
+        <h2 class="pingo-name">{{ item.Name }}</h2>
+        <p>{{ item.Description }}</p>
+        <div>
+            <button class="like-btn">Like</button>
+            <button class="btnlike-btn">Dislike</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script>
+    const scrollCard = document.querySelectorAll('.scroll-card');
+    const likeBtn = document.querySelectorAll('.like-btn');
+    const dislikeBtn = document.querySelectorAll('.btnlike-btn');
+    const pingoName = document.querySelectorAll('.pingo-name');
+    const myUser = localStorage.getItem('myUser');
+    let matchedArray = [];
+    
+    likeBtn.forEach((el, index) => {
+        el.addEventListener('click', () => {
+            scrollCard[index].classList.add('none');
+            
+            matchedArray.push(pingoName[index].innerHTML);
+            localStorage.setItem("matched", matchedArray);
+            console.log(localStorage.getItem("matched"));
+        });
+    });
+
+    dislikeBtn.forEach((el, index) => {
+        el.addEventListener('click', () => {
+            scrollCard[index].classList.add('none');
+            console.log(el.Name);
+        });
+    });
+
+</script>
+{% endblock %}
