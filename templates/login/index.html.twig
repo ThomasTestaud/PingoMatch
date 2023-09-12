@@ -9,17 +9,18 @@
 </style>
 
 <div class="example-wrapper">
-    <a href="/signin">Créer un compte</a>
     <div>
-        <label>Username: </label>
-        <input type="text" name="username" id="username"><br>
-        <label>Password: </label>
-        <input type="password" name="password" id="password"><br>
-        <p id="user-data" style="display:none;">{{users}}<p>
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" name="username" id="username" class="form-control"><br>
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" name="password" id="password" class="form-control"><br>
+        <p id="user-data" style="display:none;">{{users}}</p>
         <p style="color:red;" id="errors"></p>
-        <button id="connect">Connexion</button>
+        <button id="connect" class="btn btn-primary">Connexion</button>
     </div>
+    <a href="/signin" class="btn btn-secondary">Créer un compte</a>
 </div>
+
 
 <script>
     const userData = JSON.parse(document.getElementById('user-data').innerHTML);

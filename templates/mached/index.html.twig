@@ -9,6 +9,12 @@
     .matched-line {
         display: flex;
         align-items: center;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .matched-line:hover {
+        background-color: rgba(76, 76, 76, 0.2);
     }
 
     .matched-line + .matched-line {
@@ -43,8 +49,8 @@
 </style>
 
 <div class="example-wrapper">
-    <a href="/">Accueil</a>
-    <a href="/login">Deconnexion</a>
+    <a href="/" class="btn btn-primary">Accueil</a>
+    <a href="/login" class="btn btn-danger">Déconnexion</a>
     <p id="user-data" style="display:none;">{{users}}<p>
     <div id="display">
     </div>

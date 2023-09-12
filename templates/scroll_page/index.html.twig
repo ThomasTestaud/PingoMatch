@@ -41,22 +41,25 @@
     }
 </style>
 
-<a href="/mached">Voir vos matchs</a>
-<a href="/login">Deconnexion</a>
+<a href="/mached" class="btn btn-primary">Voir vos matchs</a>
+<a href="/login" class="btn btn-danger">Déconnexion</a>
 <div class="example-wrapper">
-    <p style="padding-top: 100px;width: 200px; margin:auto;">Vous avez parcourus tout les utilisateurs...</p>
+    <p class="text-center pt-5">Vous avez parcouru tous les utilisateurs...</p>
     {% for item in users %}
-    <div class="scroll-card">
-        <img src="{{ item.img }}">
-        <h2 class="pingo-name">{{ item.Name }}</h2>
-        <p>{{ item.Description }}</p>
-        <div>
-            <button class="like-btn">Like</button>
-            <button class="btnlike-btn">Dislike</button>
+    <div class="scroll-card card border-secondary mb-3">
+        <img src="{{ item.img }}" class="card-img-top" alt="{{ item.Name }}">
+        <div class="card-body">
+            <h2 class="card-title pingo-name">{{ item.Name }}</h2>
+            <p class="card-text">{{ item.Description }}</p>
+            <div class="">
+                <button class="btn btn-success like-btn">Like</button>
+                <button class="btn btn-danger btnlike-btn">Dislike</button>
+            </div>
         </div>
     </div>
     {% endfor %}
 </div>
+
 <script>
     const scrollCard = document.querySelectorAll('.scroll-card');
     const likeBtn = document.querySelectorAll('.like-btn');
