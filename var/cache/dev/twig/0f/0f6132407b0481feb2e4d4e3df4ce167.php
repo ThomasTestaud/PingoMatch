@@ -97,7 +97,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         border-radius: 15px;
         background-color: white;
         width: 300px;
-        height: 400px;
+        height: 430px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -116,6 +116,19 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     .scroll-card img {
         height: 300px;
         object-fit: contain;
+        transition: transform 0.3s;
+    }
+
+    img:hover {
+        transform: scale(1.05) rotate(2deg);
+    }
+
+    .card-body {
+        width: 100%;
+        background-color: white;
+        z-index:2;
+        line-height: 1;
+        text-align: center;
     }
 
     .none {
@@ -151,26 +164,26 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 71
+        // line 84
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 71, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 84, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 72
+            // line 85
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 73
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 73), "html", null, true);
+            // line 86
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 86), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 73), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 86), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 75
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 75), "html", null, true);
+            // line 88
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 88), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 76
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 76), "html", null, true);
+            // line 89
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 89), "html", null, true);
             echo "</p>
             <div class=\"\">
                 <button class=\"btn btn-success like-btn\">Like</button>
@@ -183,7 +196,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 97
         echo "</div>
 
 <script>
@@ -233,7 +246,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     public function getDebugInfo()
     {
-        return array (  187 => 84,  173 => 76,  169 => 75,  162 => 73,  159 => 72,  155 => 71,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  200 => 97,  186 => 89,  182 => 88,  175 => 86,  172 => 85,  168 => 84,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -255,7 +268,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         border-radius: 15px;
         background-color: white;
         width: 300px;
-        height: 400px;
+        height: 430px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -274,6 +287,19 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     .scroll-card img {
         height: 300px;
         object-fit: contain;
+        transition: transform 0.3s;
+    }
+
+    img:hover {
+        transform: scale(1.05) rotate(2deg);
+    }
+
+    .card-body {
+        width: 100%;
+        background-color: white;
+        z-index:2;
+        line-height: 1;
+        text-align: center;
     }
 
     .none {
