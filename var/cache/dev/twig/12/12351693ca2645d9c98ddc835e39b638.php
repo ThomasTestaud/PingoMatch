@@ -62,6 +62,9 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         echo "        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
         <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
         <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
+        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"> 
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin> 
+        <link href=\"https://fonts.googleapis.com/css2?family=Poppins&display=swap\" rel=\"stylesheet\">
         <style>
          body, html {
             margin: 0;
@@ -76,9 +79,9 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
          }
         </style>
         ";
-        // line 27
+        // line 30
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 29
+        // line 32
         echo "        
     </head>
     <body scroll=\"no\" style=\"overflow: hidden; max-width: 100vw;\">
@@ -86,9 +89,9 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         -->
 
         ";
-        // line 35
+        // line 38
         $this->displayBlock('body', $context, $blocks);
-        // line 36
+        // line 39
         echo "        <!-- Add these lines to your HTML file -->
 <!-- jQuery -->
 <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -152,7 +155,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 27
+    // line 30
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,7 +165,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 28
+        // line 31
         echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -172,7 +175,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 35
+    // line 38
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -197,7 +200,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     public function getDebugInfo()
     {
-        return array (  176 => 35,  166 => 28,  156 => 27,  146 => 10,  136 => 9,  117 => 5,  92 => 36,  90 => 35,  82 => 29,  80 => 27,  62 => 11,  60 => 9,  53 => 5,  47 => 1,);
+        return array (  179 => 38,  169 => 31,  159 => 30,  149 => 10,  139 => 9,  120 => 5,  95 => 39,  93 => 38,  85 => 32,  83 => 30,  62 => 11,  60 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -215,6 +218,9 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
         <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
         <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
+        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"> 
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin> 
+        <link href=\"https://fonts.googleapis.com/css2?family=Poppins&display=swap\" rel=\"stylesheet\">
         <style>
          body, html {
             margin: 0;

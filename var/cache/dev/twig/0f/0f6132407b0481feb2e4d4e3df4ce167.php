@@ -112,7 +112,7 @@ background-size: cover;*/
         top: 10px;
         overflow: hidden;
         left: 50%;
-        transform: translate(-50%, 0%);
+        transform: translate(-50%, 10%) scale(1.1);
         user-select: none;
     }
     
@@ -176,6 +176,45 @@ background-size: cover;*/
         animation: animate 3s;
     }
 
+    .btn-choice {
+        position: fixed;
+        top: 600px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        min-width: 60%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-choice button {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        z-index: 3;
+        border: 8px solid #4F6D7A;
+        font-weight: bold;
+        color: #4F6D7A;
+        transition: transform 0.4s;
+    }
+
+    .btn-choice button:hover {
+        transform: scale(1.3) rotate(5deg);
+    }
+
+    .btn-choice button svg {
+        height: 60%;
+    }
+
+
+    .btnlike-btn svg {
+        color: red;
+    }
+
+    .like-btn svg {
+        color: #00ff11;
+    }
+
+
     .dislike {
         border: 10px solid red;
         color: red;
@@ -238,44 +277,49 @@ background-size: cover;*/
         </div>
     </div>
 </nav>
+<h2></h2>
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 161
+        // line 201
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 161, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 201, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 162
+            // line 202
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 163
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 163), "html", null, true);
+            // line 203
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 203), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 163), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 203), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 165
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 165), "html", null, true);
+            // line 205
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 205), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 166
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 166), "html", null, true);
+            // line 206
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 206), "html", null, true);
             echo "</p>
-            <div class=\"\">
-                <button class=\"btn btn-danger btnlike-btn\">Dislike</button>
-                <button class=\"btn btn-success like-btn\">Like</button>
-            </div>
         </div>
     </div>
+            <div class=\"btn-choice\">
+                <button class=\"btnlike-btn\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" /></svg>
+                </button>
+                <button class=\"like-btn\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z\" /></svg>
+                </button>
+            </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 174
+        // line 218
         echo "    <p id=\"user-data\" style=\"display:none;\">";
-        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 174, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 218, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"animDisplay\"></div>
 </div>
@@ -285,6 +329,7 @@ background-size: cover;*/
     const likeBtn = document.querySelectorAll('.like-btn');
     const dislikeBtn = document.querySelectorAll('.btnlike-btn');
     const pingoName = document.querySelectorAll('.pingo-name');
+    const choiceBtn = document.querySelectorAll('.btn-choice');
     const myUser = localStorage.getItem('myUser');
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const animDisplay = document.getElementById('animDisplay');
@@ -300,13 +345,14 @@ background-size: cover;*/
                 scrollCard[index].style = ` 
                     left: \${posX-150}px;
                     top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
-                    transform: rotate(\${(posX-offset)/40}deg);
+                    transform: rotate(\${(posX-offset)/40}deg) translate(0%, 10%) scale(1.1);
                     opacity: \${opacity};`;
                 posX+=10;
                 opacity-= 0.007;
             }, 10);
             setTimeout(() => {
                 scrollCard[index].classList.add('none');
+                choiceBtn[index].classList.add('none');
                 clearInterval(run);
             }, 1000);
 
@@ -332,13 +378,14 @@ background-size: cover;*/
                 scrollCard[index].style = ` 
                     left: \${posX-150}px;
                     top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
-                    transform: rotate(\${(posX-offset)/40}deg);
+                    transform: rotate(\${(posX-offset)/40}deg) translate(0%, 10%) scale(1.1);
                     opacity: \${opacity};`;
                 posX-=10;
                 opacity-= 0.007;
             }, 10);
             setTimeout(() => {
                 scrollCard[index].classList.add('none');
+                choiceBtn[index].classList.add('none');
                 clearInterval(run);
             }, 1000);
             dislike();
@@ -349,6 +396,7 @@ background-size: cover;*/
     scrollCard.forEach((card, index) => {
         if (userData[index].Name === myUser) {
             scrollCard[index].classList.add('none');
+            choiceBtn[index].classList.add('none');
             //console.log('doublon');
         }
     });
@@ -363,13 +411,14 @@ background-size: cover;*/
                 var posY = e.clientY;
                 card.style = `left: \${posX-150}px;
                                 top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
-                                transform: rotate(\${(posX-offset)/40}deg);
+                                transform: rotate(\${(posX-offset)/40}deg) translate(0%, 10%) scale(1.1);
                                 opacity:\${Math.cos(Math.abs(posX-offset)/200)};`;
                 let ww = window.innerWidth;
                 
                 if(posX-offset > 200) {
                     mouseClick = false;
                     scrollCard[index].classList.add('none');
+                    choiceBtn[index].classList.add('none');
                     if(didTheyMatch()) {
                         setTimeout(() => {
                             match();
@@ -383,6 +432,7 @@ background-size: cover;*/
                 
                 if(posX-offset < -200) {
                     scrollCard[index].classList.add('none');
+                    choiceBtn[index].classList.add('none');
                     mouseClick = false;
                     dislike();
                 }
@@ -468,7 +518,7 @@ background-size: cover;*/
 
     public function getDebugInfo()
     {
-        return array (  277 => 174,  263 => 166,  259 => 165,  252 => 163,  249 => 162,  245 => 161,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  321 => 218,  303 => 206,  299 => 205,  292 => 203,  289 => 202,  285 => 201,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -505,7 +555,7 @@ background-size: cover;*/
         top: 10px;
         overflow: hidden;
         left: 50%;
-        transform: translate(-50%, 0%);
+        transform: translate(-50%, 10%) scale(1.1);
         user-select: none;
     }
     
@@ -569,6 +619,45 @@ background-size: cover;*/
         animation: animate 3s;
     }
 
+    .btn-choice {
+        position: fixed;
+        top: 600px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        min-width: 60%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-choice button {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        z-index: 3;
+        border: 8px solid #4F6D7A;
+        font-weight: bold;
+        color: #4F6D7A;
+        transition: transform 0.4s;
+    }
+
+    .btn-choice button:hover {
+        transform: scale(1.3) rotate(5deg);
+    }
+
+    .btn-choice button svg {
+        height: 60%;
+    }
+
+
+    .btnlike-btn svg {
+        color: red;
+    }
+
+    .like-btn svg {
+        color: #00ff11;
+    }
+
+
     .dislike {
         border: 10px solid red;
         color: red;
@@ -631,6 +720,7 @@ background-size: cover;*/
         </div>
     </div>
 </nav>
+<h2></h2>
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     {% for item in users %}
@@ -639,12 +729,16 @@ background-size: cover;*/
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">{{ item.Name }}</h2>
             <p class=\"card-text\">{{ item.Description }}</p>
-            <div class=\"\">
-                <button class=\"btn btn-danger btnlike-btn\">Dislike</button>
-                <button class=\"btn btn-success like-btn\">Like</button>
-            </div>
         </div>
     </div>
+            <div class=\"btn-choice\">
+                <button class=\"btnlike-btn\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" /></svg>
+                </button>
+                <button class=\"like-btn\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z\" /></svg>
+                </button>
+            </div>
     {% endfor %}
     <p id=\"user-data\" style=\"display:none;\">{{usersJson}}<p>
     <div id=\"animDisplay\"></div>
@@ -655,6 +749,7 @@ background-size: cover;*/
     const likeBtn = document.querySelectorAll('.like-btn');
     const dislikeBtn = document.querySelectorAll('.btnlike-btn');
     const pingoName = document.querySelectorAll('.pingo-name');
+    const choiceBtn = document.querySelectorAll('.btn-choice');
     const myUser = localStorage.getItem('myUser');
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const animDisplay = document.getElementById('animDisplay');
@@ -670,13 +765,14 @@ background-size: cover;*/
                 scrollCard[index].style = ` 
                     left: \${posX-150}px;
                     top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
-                    transform: rotate(\${(posX-offset)/40}deg);
+                    transform: rotate(\${(posX-offset)/40}deg) translate(0%, 10%) scale(1.1);
                     opacity: \${opacity};`;
                 posX+=10;
                 opacity-= 0.007;
             }, 10);
             setTimeout(() => {
                 scrollCard[index].classList.add('none');
+                choiceBtn[index].classList.add('none');
                 clearInterval(run);
             }, 1000);
 
@@ -702,13 +798,14 @@ background-size: cover;*/
                 scrollCard[index].style = ` 
                     left: \${posX-150}px;
                     top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
-                    transform: rotate(\${(posX-offset)/40}deg);
+                    transform: rotate(\${(posX-offset)/40}deg) translate(0%, 10%) scale(1.1);
                     opacity: \${opacity};`;
                 posX-=10;
                 opacity-= 0.007;
             }, 10);
             setTimeout(() => {
                 scrollCard[index].classList.add('none');
+                choiceBtn[index].classList.add('none');
                 clearInterval(run);
             }, 1000);
             dislike();
@@ -719,6 +816,7 @@ background-size: cover;*/
     scrollCard.forEach((card, index) => {
         if (userData[index].Name === myUser) {
             scrollCard[index].classList.add('none');
+            choiceBtn[index].classList.add('none');
             //console.log('doublon');
         }
     });
@@ -733,13 +831,14 @@ background-size: cover;*/
                 var posY = e.clientY;
                 card.style = `left: \${posX-150}px;
                                 top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
-                                transform: rotate(\${(posX-offset)/40}deg);
+                                transform: rotate(\${(posX-offset)/40}deg) translate(0%, 10%) scale(1.1);
                                 opacity:\${Math.cos(Math.abs(posX-offset)/200)};`;
                 let ww = window.innerWidth;
                 
                 if(posX-offset > 200) {
                     mouseClick = false;
                     scrollCard[index].classList.add('none');
+                    choiceBtn[index].classList.add('none');
                     if(didTheyMatch()) {
                         setTimeout(() => {
                             match();
@@ -753,6 +852,7 @@ background-size: cover;*/
                 
                 if(posX-offset < -200) {
                     scrollCard[index].classList.add('none');
+                    choiceBtn[index].classList.add('none');
                     mouseClick = false;
                     dislike();
                 }
