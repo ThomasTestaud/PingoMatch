@@ -70,11 +70,15 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
          h1 {
             font-family: 'Pacifico', cursive;
          }
+
+         .example-wraper {
+            background-image: linear-gradient(to left, #d16ba5, #aa619d, #845790, #614c7f, #41406a, #394973, #2f527a, #255b7f, #1f81a4, #1ca9c4, #33d2de, #5ffbf1) ;
+         }
         </style>
         ";
-        // line 23
+        // line 27
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 25
+        // line 29
         echo "        
     </head>
     <body scroll=\"no\" style=\"overflow: hidden; max-width: 100vw;\">
@@ -82,9 +86,9 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         -->
 
         ";
-        // line 31
+        // line 35
         $this->displayBlock('body', $context, $blocks);
-        // line 32
+        // line 36
         echo "        <!-- Add these lines to your HTML file -->
 <!-- jQuery -->
 <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -148,7 +152,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 23
+    // line 27
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -158,7 +162,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 24
+        // line 28
         echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -168,7 +172,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 31
+    // line 35
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -193,7 +197,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     public function getDebugInfo()
     {
-        return array (  172 => 31,  162 => 24,  152 => 23,  142 => 10,  132 => 9,  113 => 5,  88 => 32,  86 => 31,  78 => 25,  76 => 23,  62 => 11,  60 => 9,  53 => 5,  47 => 1,);
+        return array (  176 => 35,  166 => 28,  156 => 27,  146 => 10,  136 => 9,  117 => 5,  92 => 36,  90 => 35,  82 => 29,  80 => 27,  62 => 11,  60 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -218,6 +222,10 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
          h1 {
             font-family: 'Pacifico', cursive;
+         }
+
+         .example-wraper {
+            background-image: linear-gradient(to left, #d16ba5, #aa619d, #845790, #614c7f, #41406a, #394973, #2f527a, #255b7f, #1f81a4, #1ca9c4, #33d2de, #5ffbf1) ;
          }
         </style>
         {% block javascripts %}
