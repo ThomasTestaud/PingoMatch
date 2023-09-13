@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<style>
+
+    body {
+        background-image: linear-gradient(to right top, #4f6d7a,#65769e, #a275a9, #dd718d, #ef8557);
+        height: 100vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    a:hover {
+        color: #000;
+    }
+
+    .example-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+
+    .logoHome {
+        width: 300px;
+        height: auto;
+    }
+
+    #titleHome {
+        font-size: 50px;
+        color: #fff;
+    }
+    
+    #btnHome {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 200px;
+        margin: 70px;
+    }
+
+    .btnConnection, .btnCreation {
+        background-color: #EC3254;
+        color: #fff;
+        border: 0;
+        border-radius: 30px;
+        height: 45px;
+        width: 220px;
+    }
+
+    .btnConnection {
+        background-image: linear-gradient(to left bottom, #ef5773, #ef516d, #ee4b68, #ee4462, #ed3d5c, #ec3857, #ea3253, #e92c4e, #e72749, #e52244, #e21c3f, #e0153a);
+    }
+
+    .btnCreation {
+        background-color: #EF8557;
+        background-image: linear-gradient(to left bottom, #f3a07c, #f29b75, #f2966e, #f19167, #f08c60, #ef875a, #ef8354, #ee7e4e, #ee7947, #ed7440, #ed6f39, #ec6a32);
+    }
+
+</style>
+
+<div class="example-wrapper">
+    <div>
+        <img src="https://robotdog.thomastestaud.com/mancho/Logo-PingoMatch_2.png" class="logoHome" />
+        <h1 id="titleHome">Pingo Match</h1>
+    </div>
+    <div id="btnHome">
+        <button class="btnConnection"><a href="/login">Connexion</a></button>
+        <button class="btnCreation"><a href="/signin">Créer un compte<a/></button>
+    </div>
+</div>
+{% endblock %}
