@@ -149,8 +149,8 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     }
 
     .like {
-        border: 10px solid green;
-        color: green;
+        border: 10px solid #00ff11;
+        color: #00ff11;
     }
 
     .dislike {
@@ -268,9 +268,22 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            let posX = window.innerWidth/2;
+            offset = window.innerWidth/2;
+            let opacity = 1;
+            let run = setInterval(() => {
+                scrollCard[index].style = ` 
+                    left: \${posX-150}px;
+                    top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
+                    transform: rotate(\${(posX-offset)/40}deg);
+                    opacity: \${opacity};`;
+                posX+=10;
+                opacity-= 0.007;
+            }, 10);
             setTimeout(() => {
-            scrollCard[index].classList.add('none');
-        }, 1000);
+                scrollCard[index].classList.add('none');
+                clearInterval(run);
+            }, 1000);
             
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
@@ -281,9 +294,22 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     dislikeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            let posX = window.innerWidth/2;
+            offset = window.innerWidth/2;
+            let opacity = 1;
+            let run = setInterval(() => {
+                scrollCard[index].style = ` 
+                    left: \${posX-150}px;
+                    top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
+                    transform: rotate(\${(posX-offset)/40}deg);
+                    opacity: \${opacity};`;
+                posX-=10;
+                opacity-= 0.007;
+            }, 10);
             setTimeout(() => {
-            scrollCard[index].classList.add('none');
-        }, 1000);
+                scrollCard[index].classList.add('none');
+                clearInterval(run);
+            }, 1000);
             dislike();
         });
     });
@@ -295,7 +321,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
             //console.log('doublon');
         }
     });
-
+    
     let mouseClick = false;
     let offset = null;
     scrollCard.forEach((card, index) => {
@@ -304,7 +330,10 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 let e = window.event;
                 var posX = e.clientX;
                 var posY = e.clientY;
-                card.style = `left: \${posX-150}px;top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;transform: rotate(\${(posX-offset)/40}deg);`;
+                card.style = `left: \${posX-150}px;
+                                top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
+                                transform: rotate(\${(posX-offset)/40}deg);
+                                opacity:\${Math.cos(Math.abs(posX-offset)/200)};`;
                 let ww = window.innerWidth;
                 console.log(posX - offset);
                 
@@ -352,9 +381,9 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     function dislike() {
         animDisplay.innerHTML = `
         <div class=\"animation dislike\">
-<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
-  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
-</svg>
+            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
+            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
+            </svg>
         </div>
         `;
         setTimeout(() => {
@@ -458,8 +487,8 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     }
 
     .like {
-        border: 10px solid green;
-        color: green;
+        border: 10px solid #00ff11;
+        color: #00ff11;
     }
 
     .dislike {
@@ -554,9 +583,22 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            let posX = window.innerWidth/2;
+            offset = window.innerWidth/2;
+            let opacity = 1;
+            let run = setInterval(() => {
+                scrollCard[index].style = ` 
+                    left: \${posX-150}px;
+                    top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
+                    transform: rotate(\${(posX-offset)/40}deg);
+                    opacity: \${opacity};`;
+                posX+=10;
+                opacity-= 0.007;
+            }, 10);
             setTimeout(() => {
-            scrollCard[index].classList.add('none');
-        }, 1000);
+                scrollCard[index].classList.add('none');
+                clearInterval(run);
+            }, 1000);
             
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
@@ -567,9 +609,22 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     dislikeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
+            let posX = window.innerWidth/2;
+            offset = window.innerWidth/2;
+            let opacity = 1;
+            let run = setInterval(() => {
+                scrollCard[index].style = ` 
+                    left: \${posX-150}px;
+                    top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
+                    transform: rotate(\${(posX-offset)/40}deg);
+                    opacity: \${opacity};`;
+                posX-=10;
+                opacity-= 0.007;
+            }, 10);
             setTimeout(() => {
-            scrollCard[index].classList.add('none');
-        }, 1000);
+                scrollCard[index].classList.add('none');
+                clearInterval(run);
+            }, 1000);
             dislike();
         });
     });
@@ -581,7 +636,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
             //console.log('doublon');
         }
     });
-
+    
     let mouseClick = false;
     let offset = null;
     scrollCard.forEach((card, index) => {
@@ -590,7 +645,10 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 let e = window.event;
                 var posX = e.clientX;
                 var posY = e.clientY;
-                card.style = `left: \${posX-150}px;top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;transform: rotate(\${(posX-offset)/40}deg);`;
+                card.style = `left: \${posX-150}px;
+                                top: \${(Math.abs(posX-offset))/Math.log(Math.abs(posX-offset)*Math.abs(posX-offset))+8}px;
+                                transform: rotate(\${(posX-offset)/40}deg);
+                                opacity:\${Math.cos(Math.abs(posX-offset)/200)};`;
                 let ww = window.innerWidth;
                 console.log(posX - offset);
                 
@@ -638,9 +696,9 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     function dislike() {
         animDisplay.innerHTML = `
         <div class=\"animation dislike\">
-<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
-  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
-</svg>
+            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
+            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
+            </svg>
         </div>
         `;
         setTimeout(() => {
