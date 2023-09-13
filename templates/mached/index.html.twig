@@ -108,6 +108,7 @@
     let count = 0;
     guys.forEach((guy, index) => {
         guy.addEventListener('click', () => {
+            /*
             let popupContent = '';
 
             popUp.classList.remove('none');
@@ -130,6 +131,11 @@
                 popUp.classList.add('none');
                 popUp.innerHTML = "";
             })
+            */
+
+            localStorage.setItem("visitProfile", names[index].innerHTML);
+            window.location.href = "/otherprofiles";
+
         })
     })
 

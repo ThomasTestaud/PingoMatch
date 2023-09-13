@@ -16,6 +16,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
         '/mached' => [[['_route' => 'app_mached', '_controller' => 'App\\Controller\\MachedController::index'], null, null, null, false, false, null]],
+        '/otherprofiles' => [[['_route' => 'app_otherprofiles', '_controller' => 'App\\Controller\\OtherprofilesController::index'], null, null, null, false, false, null]],
         '/profile' => [[['_route' => 'app_profile', '_controller' => 'App\\Controller\\ProfileController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_scroll_page', '_controller' => 'App\\Controller\\ScrollPageController::index'], null, null, null, false, false, null]],

@@ -18,6 +18,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     'app_mached' => [[], ['_controller' => 'App\\Controller\\MachedController::index'], [], [['text', '/mached']], [], [], []],
+    'app_otherprofiles' => [[], ['_controller' => 'App\\Controller\\OtherprofilesController::index'], [], [['text', '/otherprofiles']], [], [], []],
     'app_profile' => [[], ['_controller' => 'App\\Controller\\ProfileController::index'], [], [['text', '/profile']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_scroll_page' => [[], ['_controller' => 'App\\Controller\\ScrollPageController::index'], [], [['text', '/']], [], [], []],

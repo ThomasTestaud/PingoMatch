@@ -89,6 +89,10 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     .example-wrapper {
         position: relative;
+        max-width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='500' height='560' preserveAspectRatio='none' viewBox='0 0 500 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1013%26quot%3b)' fill='none'%3e%3crect width='500' height='560' x='0' y='0' fill='rgba(76%2c 146%2c 219%2c 1)'%3e%3c/rect%3e%3cpath d='M32.79 531.61 a114.49 114.49 0 1 0 228.98 0 a114.49 114.49 0 1 0 -228.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M338.38%2c316.833C360.349%2c316.581%2c380.81%2c305.638%2c392.005%2c286.734C403.418%2c267.461%2c403.779%2c243.861%2c393.323%2c224.052C382.095%2c202.78%2c362.431%2c185.519%2c338.38%2c185.14C313.77%2c184.752%2c292.087%2c200.636%2c280.35%2c222.27C269.148%2c242.919%2c270.296%2c267.965%2c282.583%2c287.988C294.32%2c307.114%2c315.941%2c317.09%2c338.38%2c316.833' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M362.55 415.89 a106.68 106.68 0 1 0 213.36 0 a106.68 106.68 0 1 0 -213.36 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M262.44%2c218.845C296.129%2c218.629%2c328.166%2c201.557%2c344.258%2c171.959C359.717%2c143.526%2c352.85%2c109.891%2c337.025%2c81.66C320.767%2c52.656%2c295.671%2c24.876%2c262.44%2c25.994C230.395%2c27.072%2c211.927%2c58.535%2c196.071%2c86.403C180.465%2c113.83%2c164.647%2c144.808%2c178.784%2c173.02C194.051%2c203.487%2c228.363%2c219.063%2c262.44%2c218.845' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M323.65 54.61 a108.99 108.99 0 1 0 217.98 0 a108.99 108.99 0 1 0 -217.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M340.717%2c341.408C355.058%2c341.005%2c367.031%2c331.478%2c373.999%2c318.937C380.751%2c306.785%2c381.27%2c292.349%2c374.821%2c280.033C367.847%2c266.713%2c355.739%2c254.755%2c340.717%2c255.377C326.361%2c255.971%2c318.197%2c270.131%2c311.178%2c282.668C304.389%2c294.794%2c297.787%2c308.487%2c304.031%2c320.903C310.777%2c334.317%2c325.708%2c341.83%2c340.717%2c341.408' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1013'%3e%3crect width='500' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e\");        background-size: cover;
     }
 
     .scroll-card {
@@ -151,6 +155,15 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     .like {
         border: 10px solid #00ff11;
         color: #00ff11;
+    }
+
+    .match {
+        font-family: 'Pacifico', cursive;
+        text-align: center;
+        color: #00ff11;
+        font-size: 50px;
+        /*font-weight: bold;*/
+        text-shadow: 2px 2px 0 grey;
     }
 
     .dislike {
@@ -216,26 +229,26 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 136
+        // line 149
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 136, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 149, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 137
+            // line 150
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 138
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 138), "html", null, true);
+            // line 151
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 151), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 138), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 151), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 140
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 140), "html", null, true);
+            // line 153
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 153), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 141
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 141), "html", null, true);
+            // line 154
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 154), "html", null, true);
             echo "</p>
             <div class=\"\">
                 <button class=\"btn btn-danger btnlike-btn\">Dislike</button>
@@ -248,9 +261,9 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 149
+        // line 162
         echo "    <p id=\"user-data\" style=\"display:none;\">";
-        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 149, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 162, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"animDisplay\"></div>
 </div>
@@ -284,10 +297,16 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 scrollCard[index].classList.add('none');
                 clearInterval(run);
             }, 1000);
-            
+
+            if(didTheyMatch()) {
+                setTimeout(() => {
+                    match();
+                }, 1100);
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
             console.log(localStorage.getItem(\"matched\"));
+            }
+            
             likePingo();
         });
     });
@@ -335,13 +354,18 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                                 transform: rotate(\${(posX-offset)/40}deg);
                                 opacity:\${Math.cos(Math.abs(posX-offset)/200)};`;
                 let ww = window.innerWidth;
-                console.log(posX - offset);
                 
                 if(posX-offset > 200) {
+                    mouseClick = false;
                     scrollCard[index].classList.add('none');
+                    if(didTheyMatch()) {
+                        setTimeout(() => {
+                            match();
+                        }, 1100);
                     matchedArray.push(pingoName[index].innerHTML);
                     localStorage.setItem(\"matched\", matchedArray);
-                    mouseClick = false;
+                    console.log(localStorage.getItem(\"matched\"));
+                    }
                     likePingo();
                 }
                 
@@ -381,14 +405,33 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     function dislike() {
         animDisplay.innerHTML = `
         <div class=\"animation dislike\">
-            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
-            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
-            </svg>
+            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" /></svg>
         </div>
         `;
         setTimeout(() => {
             animDisplay.innerHTML = '';
         }, 1000);
+    }
+
+    function match() {
+        animDisplay.innerHTML = `
+        <div class=\"animation match\">
+            <p>It's a match!!</p>
+        </div>
+        `;
+        setTimeout(() => {
+            animDisplay.innerHTML = '';
+        }, 1000);
+    }
+
+    function didTheyMatch() {
+        let num = Math.random();
+        console.log(num)
+        if(num > 0.5) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
 </script>
@@ -413,7 +456,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     public function getDebugInfo()
     {
-        return array (  252 => 149,  238 => 141,  234 => 140,  227 => 138,  224 => 137,  220 => 136,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  265 => 162,  251 => 154,  247 => 153,  240 => 151,  237 => 150,  233 => 149,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -427,6 +470,10 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     .example-wrapper {
         position: relative;
+        max-width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='500' height='560' preserveAspectRatio='none' viewBox='0 0 500 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1013%26quot%3b)' fill='none'%3e%3crect width='500' height='560' x='0' y='0' fill='rgba(76%2c 146%2c 219%2c 1)'%3e%3c/rect%3e%3cpath d='M32.79 531.61 a114.49 114.49 0 1 0 228.98 0 a114.49 114.49 0 1 0 -228.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M338.38%2c316.833C360.349%2c316.581%2c380.81%2c305.638%2c392.005%2c286.734C403.418%2c267.461%2c403.779%2c243.861%2c393.323%2c224.052C382.095%2c202.78%2c362.431%2c185.519%2c338.38%2c185.14C313.77%2c184.752%2c292.087%2c200.636%2c280.35%2c222.27C269.148%2c242.919%2c270.296%2c267.965%2c282.583%2c287.988C294.32%2c307.114%2c315.941%2c317.09%2c338.38%2c316.833' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M362.55 415.89 a106.68 106.68 0 1 0 213.36 0 a106.68 106.68 0 1 0 -213.36 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M262.44%2c218.845C296.129%2c218.629%2c328.166%2c201.557%2c344.258%2c171.959C359.717%2c143.526%2c352.85%2c109.891%2c337.025%2c81.66C320.767%2c52.656%2c295.671%2c24.876%2c262.44%2c25.994C230.395%2c27.072%2c211.927%2c58.535%2c196.071%2c86.403C180.465%2c113.83%2c164.647%2c144.808%2c178.784%2c173.02C194.051%2c203.487%2c228.363%2c219.063%2c262.44%2c218.845' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M323.65 54.61 a108.99 108.99 0 1 0 217.98 0 a108.99 108.99 0 1 0 -217.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M340.717%2c341.408C355.058%2c341.005%2c367.031%2c331.478%2c373.999%2c318.937C380.751%2c306.785%2c381.27%2c292.349%2c374.821%2c280.033C367.847%2c266.713%2c355.739%2c254.755%2c340.717%2c255.377C326.361%2c255.971%2c318.197%2c270.131%2c311.178%2c282.668C304.389%2c294.794%2c297.787%2c308.487%2c304.031%2c320.903C310.777%2c334.317%2c325.708%2c341.83%2c340.717%2c341.408' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1013'%3e%3crect width='500' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e\");        background-size: cover;
     }
 
     .scroll-card {
@@ -489,6 +536,15 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     .like {
         border: 10px solid #00ff11;
         color: #00ff11;
+    }
+
+    .match {
+        font-family: 'Pacifico', cursive;
+        text-align: center;
+        color: #00ff11;
+        font-size: 50px;
+        /*font-weight: bold;*/
+        text-shadow: 2px 2px 0 grey;
     }
 
     .dislike {
@@ -599,10 +655,16 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 scrollCard[index].classList.add('none');
                 clearInterval(run);
             }, 1000);
-            
+
+            if(didTheyMatch()) {
+                setTimeout(() => {
+                    match();
+                }, 1100);
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
             console.log(localStorage.getItem(\"matched\"));
+            }
+            
             likePingo();
         });
     });
@@ -650,13 +712,18 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                                 transform: rotate(\${(posX-offset)/40}deg);
                                 opacity:\${Math.cos(Math.abs(posX-offset)/200)};`;
                 let ww = window.innerWidth;
-                console.log(posX - offset);
                 
                 if(posX-offset > 200) {
+                    mouseClick = false;
                     scrollCard[index].classList.add('none');
+                    if(didTheyMatch()) {
+                        setTimeout(() => {
+                            match();
+                        }, 1100);
                     matchedArray.push(pingoName[index].innerHTML);
                     localStorage.setItem(\"matched\", matchedArray);
-                    mouseClick = false;
+                    console.log(localStorage.getItem(\"matched\"));
+                    }
                     likePingo();
                 }
                 
@@ -696,14 +763,33 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     function dislike() {
         animDisplay.innerHTML = `
         <div class=\"animation dislike\">
-            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
-            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />
-            </svg>
+            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" /></svg>
         </div>
         `;
         setTimeout(() => {
             animDisplay.innerHTML = '';
         }, 1000);
+    }
+
+    function match() {
+        animDisplay.innerHTML = `
+        <div class=\"animation match\">
+            <p>It's a match!!</p>
+        </div>
+        `;
+        setTimeout(() => {
+            animDisplay.innerHTML = '';
+        }, 1000);
+    }
+
+    function didTheyMatch() {
+        let num = Math.random();
+        console.log(num)
+        if(num > 0.5) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
 </script>

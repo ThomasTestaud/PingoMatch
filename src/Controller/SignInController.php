@@ -26,12 +26,11 @@ class SignInController extends AbstractController
 
             file_put_contents($jsonFilePath, json_encode($users));
 
-            header("Location: /");
+            header("Location: /login");
             exit;
         } else {
             $return = "Vous devez remplir tout les champs";
         }
-
 
         return $this->render('sign_in/index.html.twig', [
             'result' => $return,

@@ -116,6 +116,11 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
     <a href=\"/login\" class=\"btn btn-secondary\">J'ai déjà un compte</a>
 </div>
 
+<script>
+    
+
+</script>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -177,6 +182,11 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
     </form>
     <a href=\"/login\" class=\"btn btn-secondary\">J'ai déjà un compte</a>
 </div>
+
+<script>
+    
+
+</script>
 
 {% endblock %}
 ", "sign_in/index.html.twig", "C:\\wamp64\\www\\C_O_D_E\\Pingo_Match\\PingoMatch\\templates\\sign_in\\index.html.twig");

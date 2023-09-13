@@ -52,31 +52,39 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css\" integrity=\"sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65\" crossorigin=\"anonymous\">
         ";
-        // line 8
+        // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
-        echo "        <style>
+        // line 11
+        echo "        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+        <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
+        <style>
          body, html {
             margin: 0;
          }
+
+         h1 {
+            font-family: 'Pacifico', cursive;
+         }
         </style>
         ";
-        // line 15
+        // line 23
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 17
+        // line 25
         echo "        
     </head>
-    <body>
+    <body scroll=\"no\" style=\"overflow: hidden; max-width: 100vw;\">
     <!--
         -->
 
         ";
-        // line 23
+        // line 31
         $this->displayBlock('body', $context, $blocks);
-        // line 24
+        // line 32
         echo "        <!-- Add these lines to your HTML file -->
 <!-- jQuery -->
 <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -120,7 +128,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     }
 
-    // line 8
+    // line 9
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -130,27 +138,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
-        echo "        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 15
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 16
+        // line 10
         echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -161,6 +149,26 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
     }
 
     // line 23
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 24
+        echo "        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 31
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,7 +193,7 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 
     public function getDebugInfo()
     {
-        return array (  164 => 23,  154 => 16,  144 => 15,  134 => 9,  124 => 8,  105 => 5,  80 => 24,  78 => 23,  70 => 17,  68 => 15,  61 => 10,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  172 => 31,  162 => 24,  152 => 23,  142 => 10,  132 => 9,  113 => 5,  88 => 32,  86 => 31,  78 => 25,  76 => 23,  62 => 11,  60 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -195,20 +203,28 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css\" integrity=\"sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65\" crossorigin=\"anonymous\">
         {% block stylesheets %}
         {% endblock %}
+        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+        <link href=\"https://fonts.googleapis.com/css2?family=Pacifico&display=swap\" rel=\"stylesheet\">
         <style>
          body, html {
             margin: 0;
+         }
+
+         h1 {
+            font-family: 'Pacifico', cursive;
          }
         </style>
         {% block javascripts %}
         {% endblock %}
         
     </head>
-    <body>
+    <body scroll=\"no\" style=\"overflow: hidden; max-width: 100vw;\">
     <!--
         -->
 

@@ -193,6 +193,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
     let count = 0;
     guys.forEach((guy, index) => {
         guy.addEventListener('click', () => {
+            /*
             let popupContent = '';
 
             popUp.classList.remove('none');
@@ -215,6 +216,11 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
                 popUp.classList.add('none');
                 popUp.innerHTML = \"\";
             })
+            */
+
+            localStorage.setItem(\"visitProfile\", names[index].innerHTML);
+            window.location.href = \"/otherprofiles\";
+
         })
     })
 
@@ -356,6 +362,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
     let count = 0;
     guys.forEach((guy, index) => {
         guy.addEventListener('click', () => {
+            /*
             let popupContent = '';
 
             popUp.classList.remove('none');
@@ -378,6 +385,11 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
                 popUp.classList.add('none');
                 popUp.innerHTML = \"\";
             })
+            */
+
+            localStorage.setItem(\"visitProfile\", names[index].innerHTML);
+            window.location.href = \"/otherprofiles\";
+
         })
     })
 
