@@ -118,7 +118,7 @@ class __TwigTemplate_98b05711dd0b434d40295e6c0a1347c6 extends Template
     const userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const connectBtn = document.getElementById('connect');
     const errors = document.getElementById('errors');
-    console.log(typeof userData);
+    console.log(userData);
 
     function connect() {
         const username = document.getElementById('username').value;
@@ -204,7 +204,7 @@ class __TwigTemplate_98b05711dd0b434d40295e6c0a1347c6 extends Template
     const userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const connectBtn = document.getElementById('connect');
     const errors = document.getElementById('errors');
-    console.log(typeof userData);
+    console.log(userData);
 
     function connect() {
         const username = document.getElementById('username').value;

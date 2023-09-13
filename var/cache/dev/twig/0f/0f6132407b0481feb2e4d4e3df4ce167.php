@@ -100,7 +100,7 @@ background-size: cover;*/
 
     .scroll-card {
         position: absolute;
-        box-shadow: 2px 2px 2px;
+        box-shadow: 2px 2px 2px, 4px 4px 4px 4px inset;
         border-radius: 15px;
         background-color: white;
         width: 300px;
@@ -246,7 +246,7 @@ background-size: cover;*/
         $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 161, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 162
-            echo "    <div class=\"scroll-card card border-secondary mb-3\">
+            echo "    <div class=\"scroll-card secondary mb-3\">
         <img src=\"";
             // line 163
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 163), "html", null, true);
@@ -493,7 +493,7 @@ background-size: cover;*/
 
     .scroll-card {
         position: absolute;
-        box-shadow: 2px 2px 2px;
+        box-shadow: 2px 2px 2px, 4px 4px 4px 4px inset;
         border-radius: 15px;
         background-color: white;
         width: 300px;
@@ -634,7 +634,7 @@ background-size: cover;*/
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     {% for item in users %}
-    <div class=\"scroll-card card border-secondary mb-3\">
+    <div class=\"scroll-card secondary mb-3\">
         <img src=\"{{ item.img }}\" class=\"card-img-top\" alt=\"{{ item.Name }}\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">{{ item.Name }}</h2>
