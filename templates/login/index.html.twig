@@ -7,6 +7,8 @@
 
     body {
         height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='3840' height='2160' preserveAspectRatio='none' viewBox='0 0 3840 2160'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1402%26quot%3b)' fill='none'%3e%3crect width='3840' height='2160' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1403%26quot%3b)'%3e%3c/rect%3e%3cpath d='M0 0L451.46 0L0 368.98z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M0 368.98L451.46 0L1125.16 0L0 912.35z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M0 912.35L1125.16 0L1428.5100000000002 0L0 923.52z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M0 923.52L1428.5100000000002 0L3058.2300000000005 0L0 1156.87z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M3840 2160L2636.7200000000003 2160L3840 1766.45z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M3840 1766.45L2636.7200000000003 2160L2196.7300000000005 2160L3840 1116.38z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M3840 1116.3799999999999L2196.73 2160L1564 2160L3840 425.6899999999998z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M3840 425.6899999999998L1564 2160L870.32 2160L3840 132.17999999999984z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1402'%3e%3crect width='3840' height='2160' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='89.06%25' y1='119.44%25' x2='10.94%25' y2='-19.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1403'%3e%3cstop stop-color='rgba(79%2c 109%2c 122%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0.51'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");        
     }
 
     .example-wrapper { 
@@ -70,9 +72,30 @@
         background-color: #EF8557;
         background-image: linear-gradient(to left bottom, #f3a07c, #f29b75, #f2966e, #f19167, #f08c60, #ef875a, #ef8354, #ee7e4e, #ee7947, #ed7440, #ed6f39, #ec6a32);
     }
-    {# .headLogin {
-        background-image: linear-gradient(to right top, #4f6d7a,#65769e, #a275a9, #dd718d, #ef8557);
-    } #}
+    .headLogin {
+        height:200px;
+    }
+
+    .lead {
+        font-size:17px;
+    }
+
+    label {
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+    }
+
+    footer p {
+        font-size: 10px;
+        font-weight:300;
+        text-transform: capitalize;
+    }
 
 
 </style>
@@ -86,9 +109,9 @@
 
 <div class="example-wrapper">
     <div>
-        <label for="username" class="form-label">Username:</label>
+        <label for="username" class="form-label">Pseudo</label>
         <input type="text" name="username" id="username" class="form-control"><br>
-        <label for="password" class="form-label">Password:</label>
+        <label for="password" class="form-label">Mot de passe</label>
         <input type="password" name="password" id="password" class="form-control"><br>
         <p id="user-data" style="display:none;">{{users}}</p>
         <p style="color:red;" id="errors"></p>
@@ -98,6 +121,10 @@
         <div>
     </div>
 </div>
+
+<footer>
+    <p>Tous droits réservés © PingoMatch, Haute-Savoie, Annecy | 2023</p>
+</footer>
 
 
 <script>
