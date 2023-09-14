@@ -218,7 +218,21 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
     
     let score = matched.length;
     let highestScore = localStorage.getItem(\"HighestScore\");
+    let likeScore = localStorage.getItem(\"like\");
+    let francisCount = localStorage.getItem(\"francisCount\");
+    let HfrancisCount = localStorage.getItem(\"HfrancisCount\");
 
+    console.log(\"Avec \"+likeScore+\" likes\");
+    console.log(\"Francis count = \"+ francisCount);
+    if(francisCount > HfrancisCount) {
+        console.log('Vous avez battu le Highest Francis Scord !!!');
+        console.log(\"Nouveau Highest Francis Score \" + francisCount);
+        console.log(\"Ancien Highest Francis Score : \" + HfrancisCount);
+        localStorage.setItem(\"HfrancisCount\", francisCount);
+    }else {
+    console.log(\"Vous avez une Score Francis de \" + francisCount + \" matchs !\");
+    console.log(\"Highest Francis Score : \" + HfrancisCount);
+    }
     if(score > highestScore) {
         console.log('Vous avez battu le Highest Scord !!!');
         console.log(\"Nouveau Highest Score \" + matched.length);
@@ -452,7 +466,21 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
     
     let score = matched.length;
     let highestScore = localStorage.getItem(\"HighestScore\");
+    let likeScore = localStorage.getItem(\"like\");
+    let francisCount = localStorage.getItem(\"francisCount\");
+    let HfrancisCount = localStorage.getItem(\"HfrancisCount\");
 
+    console.log(\"Avec \"+likeScore+\" likes\");
+    console.log(\"Francis count = \"+ francisCount);
+    if(francisCount > HfrancisCount) {
+        console.log('Vous avez battu le Highest Francis Scord !!!');
+        console.log(\"Nouveau Highest Francis Score \" + francisCount);
+        console.log(\"Ancien Highest Francis Score : \" + HfrancisCount);
+        localStorage.setItem(\"HfrancisCount\", francisCount);
+    }else {
+    console.log(\"Vous avez une Score Francis de \" + francisCount + \" matchs !\");
+    console.log(\"Highest Francis Score : \" + HfrancisCount);
+    }
     if(score > highestScore) {
         console.log('Vous avez battu le Highest Scord !!!');
         console.log(\"Nouveau Highest Score \" + matched.length);

@@ -366,7 +366,8 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const animDisplay = document.getElementById('animDisplay');
     let matchedArray = [];
-
+    let like = 0;
+    let francisCount =0;
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -394,8 +395,15 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 }, 1100);
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
-            console.log(localStorage.getItem(\"matched\"));
+            //console.log(localStorage.getItem(\"matched\"));likeScore
+                if(pingoName[index].innerHTML === 'Francis') {
+                    francisCount++;
+                    localStorage.setItem(\"francisCount\", francisCount);
+                    
+                }
             }
+            like++;
+            localStorage.setItem(\"like\", like);
             
             likePingo();
         });
@@ -818,7 +826,8 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const animDisplay = document.getElementById('animDisplay');
     let matchedArray = [];
-
+    let like = 0;
+    let francisCount =0;
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -846,8 +855,15 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
                 }, 1100);
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
-            console.log(localStorage.getItem(\"matched\"));
+            //console.log(localStorage.getItem(\"matched\"));likeScore
+                if(pingoName[index].innerHTML === 'Francis') {
+                    francisCount++;
+                    localStorage.setItem(\"francisCount\", francisCount);
+                    
+                }
             }
+            like++;
+            localStorage.setItem(\"like\", like);
             
             likePingo();
         });
