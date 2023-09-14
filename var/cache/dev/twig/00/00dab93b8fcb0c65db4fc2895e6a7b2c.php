@@ -65,7 +65,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello MachedController!";
+        echo "Matched";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -86,51 +86,96 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 
         // line 6
         echo "<style>
+
+    #display {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        max-height: 100vh;
+        overflow: scroll;
+        padding-bottom: 100px;
+    }
+
+    #display::-webkit-scrollbar {
+        display: none;
+    }
     
+    .matchedFlex {
+        width: 40%;
+    }
 
     .matched-line {
+        position: relative;
+        padding-top:10px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        padding: 10px;
+        gap:15px;
         cursor: pointer;
         transition: background-color 0.2s;
     }
 
     .matched-line:hover {
-        background-color: rgba(76, 76, 76, 0.2);
+        background-color: rgba(219, 233, 238, 0.5);
+        border-radius: 10px;
     }
 
-    .matched-line + .matched-line {
-        border-top: 1px dashed grey;
-    }
-
+    ";
+        // line 46
+        echo "
     img {
-        height: 50px;
-        width: 50px;
+        height: 140px;
+        width: auto;
         border-radius: 50%;
-        margin-right: 15px;
+        object-fit: cover;
     }
 
     #pop-up {
-        position: fixed;
+        position: absolute;
         z-index: 2;
         border: 1px solid black;
         border-radius: 15px;
         display: flex;
         align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        top: 3vh;
+        flex-direction: row;
+        justify-content: space-evenly;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 90vw;
         height: 90vh;
         background-color: white;
+    }
+
+    #pop-up div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #pop-up img {
+        border-radius:0;
+        width:40%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+    #cross {
+        position: absolute;
+        right: 3%;
+        top: 3%;
+        font-size: 30px;
+        color: #000;
     }
 
     .none {
         display: none !important;
     }
 </style>
-<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+<nav class=\"navbar navbar-expand-lg navbar-white bg-white\">
     <div class=\"container\">
         <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -148,7 +193,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
                     <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                    <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>
                 </li>
 
             </ul>
@@ -157,8 +202,8 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 </nav>
 <div class=\"example-wrapper\">
     <p id=\"user-data\" style=\"display:none;\">";
-        // line 77
-        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 77, $this->source); })()), "html", null, true);
+        // line 123
+        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 123, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"display\">
     </div>
@@ -170,6 +215,19 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
     const popUp = document.getElementById('pop-up');
     const userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const matched = localStorage.getItem('matched').split(',').map(item => item.trim());
+    
+    let score = matched.length;
+    let highestScore = localStorage.getItem(\"HighestScore\");
+
+    if(score > highestScore) {
+        console.log('Vous avez battu le Highest Scord !!!');
+        console.log(\"Nouveau Highest Score \" + matched.length);
+        console.log(\"Ancien Highest Score : \" + highestScore);
+        localStorage.setItem(\"HighestScore\", matched.length);
+    }else {
+    console.log(\"Vous avez une Score de \" + matched.length + \" matchs !\");
+    console.log(\"Highest Score : \" + highestScore);
+    }
 
     let list = \"\";
 
@@ -177,10 +235,12 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         matched.forEach((maEl) => {
             if(allData.Name === maEl) {
                 list += `
+                <div class=\"matchedFlex\">
                     <div class=\"matched-line\">
                         <img src=\"\${allData.img}\"/>
                         <h3 class=\"name\">\${allData.Name}</h3>
-                    </div>`;
+                    </div>
+                </div>`;
             }
         })
     });
@@ -201,10 +261,14 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
             userData.forEach((allData) => {
                 if(allData.Name === names[index].innerHTML) {
                 popupContent += `
-                    <h2 id=\"cross\">X</h2>
-                    <img src=\"\${allData.img}\"/>
-                    <h3 class=\"name\">\${allData.Name}</h3>
-                    <p>\${allData.Description}</p>
+                    <div>
+                        <img src=\"\${allData.img}\"/>
+                    </div>
+                    <div>
+                        <h2 id=\"cross\">X</h2>
+                        <h3 class=\"name\">\${allData.Name}</h3>
+                        <p>\${allData.Description}</p>
+                    </div>
                     `;
             }
             });
@@ -247,62 +311,108 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 
     public function getDebugInfo()
     {
-        return array (  161 => 77,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  206 => 123,  127 => 46,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello MachedController!{% endblock %}
+{% block title %}Matched{% endblock %}
 
 {% block body %}
 <style>
+
+    #display {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        max-height: 100vh;
+        overflow: scroll;
+        padding-bottom: 100px;
+    }
+
+    #display::-webkit-scrollbar {
+        display: none;
+    }
     
+    .matchedFlex {
+        width: 40%;
+    }
 
     .matched-line {
+        position: relative;
+        padding-top:10px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        padding: 10px;
+        gap:15px;
         cursor: pointer;
         transition: background-color 0.2s;
     }
 
     .matched-line:hover {
-        background-color: rgba(76, 76, 76, 0.2);
+        background-color: rgba(219, 233, 238, 0.5);
+        border-radius: 10px;
     }
 
-    .matched-line + .matched-line {
+    {# .matched-line + .matched-line {
         border-top: 1px dashed grey;
-    }
+    } #}
 
     img {
-        height: 50px;
-        width: 50px;
+        height: 140px;
+        width: auto;
         border-radius: 50%;
-        margin-right: 15px;
+        object-fit: cover;
     }
 
     #pop-up {
-        position: fixed;
+        position: absolute;
         z-index: 2;
         border: 1px solid black;
         border-radius: 15px;
         display: flex;
         align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        top: 3vh;
+        flex-direction: row;
+        justify-content: space-evenly;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 90vw;
         height: 90vh;
         background-color: white;
+    }
+
+    #pop-up div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #pop-up img {
+        border-radius:0;
+        width:40%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+    #cross {
+        position: absolute;
+        right: 3%;
+        top: 3%;
+        font-size: 30px;
+        color: #000;
     }
 
     .none {
         display: none !important;
     }
 </style>
-<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+<nav class=\"navbar navbar-expand-lg navbar-white bg-white\">
     <div class=\"container\">
         <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -320,7 +430,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
                     <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                    <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>
                 </li>
 
             </ul>
@@ -339,6 +449,19 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
     const popUp = document.getElementById('pop-up');
     const userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const matched = localStorage.getItem('matched').split(',').map(item => item.trim());
+    
+    let score = matched.length;
+    let highestScore = localStorage.getItem(\"HighestScore\");
+
+    if(score > highestScore) {
+        console.log('Vous avez battu le Highest Scord !!!');
+        console.log(\"Nouveau Highest Score \" + matched.length);
+        console.log(\"Ancien Highest Score : \" + highestScore);
+        localStorage.setItem(\"HighestScore\", matched.length);
+    }else {
+    console.log(\"Vous avez une Score de \" + matched.length + \" matchs !\");
+    console.log(\"Highest Score : \" + highestScore);
+    }
 
     let list = \"\";
 
@@ -346,10 +469,12 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         matched.forEach((maEl) => {
             if(allData.Name === maEl) {
                 list += `
+                <div class=\"matchedFlex\">
                     <div class=\"matched-line\">
                         <img src=\"\${allData.img}\"/>
                         <h3 class=\"name\">\${allData.Name}</h3>
-                    </div>`;
+                    </div>
+                </div>`;
             }
         })
     });
@@ -370,10 +495,14 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
             userData.forEach((allData) => {
                 if(allData.Name === names[index].innerHTML) {
                 popupContent += `
-                    <h2 id=\"cross\">X</h2>
-                    <img src=\"\${allData.img}\"/>
-                    <h3 class=\"name\">\${allData.Name}</h3>
-                    <p>\${allData.Description}</p>
+                    <div>
+                        <img src=\"\${allData.img}\"/>
+                    </div>
+                    <div>
+                        <h2 id=\"cross\">X</h2>
+                        <h3 class=\"name\">\${allData.Name}</h3>
+                        <p>\${allData.Description}</p>
+                    </div>
                     `;
             }
             });
@@ -395,7 +524,6 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 
 
 </script>
-{% endblock %}
-", "mached/index.html.twig", "C:\\wamp64\\www\\C_O_D_E\\Pingo_Match\\PingoMatch\\templates\\mached\\index.html.twig");
+{% endblock %}", "mached/index.html.twig", "C:\\wamp64\\www\\C_O_D_E\\Pingo_Match\\PingoMatch\\templates\\mached\\index.html.twig");
     }
 }

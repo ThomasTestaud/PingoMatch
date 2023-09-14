@@ -131,6 +131,19 @@
     const popUp = document.getElementById('pop-up');
     const userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const matched = localStorage.getItem('matched').split(',').map(item => item.trim());
+    
+    let score = matched.length;
+    let highestScore = localStorage.getItem("HighestScore");
+
+    if(score > highestScore) {
+        console.log('Vous avez battu le Highest Scord !!!');
+        console.log("Nouveau Highest Score " + matched.length);
+        console.log("Ancien Highest Score : " + highestScore);
+        localStorage.setItem("HighestScore", matched.length);
+    }else {
+    console.log("Vous avez une Score de " + matched.length + " matchs !");
+    console.log("Highest Score : " + highestScore);
+    }
 
     let list = "";
 

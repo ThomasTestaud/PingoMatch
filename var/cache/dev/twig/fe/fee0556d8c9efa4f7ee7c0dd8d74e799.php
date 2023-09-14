@@ -65,7 +65,7 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello SignInController!";
+        echo "Sign In";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -86,13 +86,120 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
 
         // line 6
         echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body {
+        height: 100vh;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .example-wrapper { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1em auto; 
+        max-width: 800px;
+        width: 80%;
+        font: 18px/1.5 sans-serif; 
+    }
+
+    .example-wrapper form {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .example-wrapper code { 
+        background: #F5F5F5; 
+        padding: 2px 6px; 
+    }
+
+    a, .styleBtn {
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    a:hover {
+        color: #fff;
+    }
+
+    .headLogin {
+        height:200px;
+    }
+
+    .lead {
+        font-size:17px;
+    }
+
+    label {
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .btnConnection, .btnCreation {
+        background-color: #EC3254;
+        color: #fff;
+        border: 0;
+        border-radius: 30px;
+        height: 45px;
+        width: 220px;
+    }
+
+    .btnConnection {
+        background-image: linear-gradient(to left bottom, #ef5773, #ef516d, #ee4b68, #ee4462, #ed3d5c, #ec3857, #ea3253, #e92c4e, #e72749, #e52244, #e21c3f, #e0153a);
+    }
+
+    .btnCreation {
+        background-color: #EF8557;
+        background-image: linear-gradient(to left bottom, #f3a07c, #f29b75, #f2966e, #f19167, #f08c60, #ef875a, #ef8354, #ee7e4e, #ee7947, #ed7440, #ed6f39, #ec6a32);
+    }
+
+    #btnLogin {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 200px;
+        transition: box-shadow 0.2s;
+    }
+
+    .btnConnection:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnConnection:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+    }
+
+    .btnCreation:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnCreation:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+    }
+
+    footer p {
+        font-size: 10px;
+        font-weight:300;
+        text-transform: capitalize;
+    }
 </style>
 
 
 <div class=\"mb-4\">
-            <div class=\"text-center bg-primary text-white py-4\">
+            <div class=\"text-center text-black py-4 headLogin\">
                 <h1 class=\"display-4\">PingoMatch</h1>
                 <p class=\"lead\">Pôle de Rencontres</p>
             </div>
@@ -109,12 +216,22 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
         </div>
         <div class=\"mb-3\">
             <label for=\"description\" class=\"form-label\">Description</label>
-            <textarea name=\"description\" class=\"form-control\"></textarea>
+            <textarea name=\"description\" class=\"form-control\" cols=\"40\" rows=\"5\"></textarea>
         </div>
-        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
+        <p style=\"color: red\">";
+        // line 139
+        echo twig_escape_filter($this->env, (isset($context["result"]) || array_key_exists("result", $context) ? $context["result"] : (function () { throw new RuntimeError('Variable "result" does not exist.', 139, $this->source); })()), "html", null, true);
+        echo "</p>
+        <div id=\"btnLogin\">
+            <button type=\"submit\" class=\"btnConnection styleBtn\">Envoyer</button>
+            <button class=\"btnCreation styleBtn\"><a href=\"/signin\">Créer un compte<a/></button>
+        </div>
     </form>
-    <a href=\"/login\" class=\"btn btn-secondary\">J'ai déjà un compte</a>
 </div>
+
+<footer>
+    <p>© PingoMatch, Haute-Savoie, Annecy | 2023</p>
+</footer>
 
 <script>
     
@@ -142,24 +259,131 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  223 => 139,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello SignInController!{% endblock %}
+{% block title %}Sign In{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body {
+        height: 100vh;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .example-wrapper { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1em auto; 
+        max-width: 800px;
+        width: 80%;
+        font: 18px/1.5 sans-serif; 
+    }
+
+    .example-wrapper form {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .example-wrapper code { 
+        background: #F5F5F5; 
+        padding: 2px 6px; 
+    }
+
+    a, .styleBtn {
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    a:hover {
+        color: #fff;
+    }
+
+    .headLogin {
+        height:200px;
+    }
+
+    .lead {
+        font-size:17px;
+    }
+
+    label {
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .btnConnection, .btnCreation {
+        background-color: #EC3254;
+        color: #fff;
+        border: 0;
+        border-radius: 30px;
+        height: 45px;
+        width: 220px;
+    }
+
+    .btnConnection {
+        background-image: linear-gradient(to left bottom, #ef5773, #ef516d, #ee4b68, #ee4462, #ed3d5c, #ec3857, #ea3253, #e92c4e, #e72749, #e52244, #e21c3f, #e0153a);
+    }
+
+    .btnCreation {
+        background-color: #EF8557;
+        background-image: linear-gradient(to left bottom, #f3a07c, #f29b75, #f2966e, #f19167, #f08c60, #ef875a, #ef8354, #ee7e4e, #ee7947, #ed7440, #ed6f39, #ec6a32);
+    }
+
+    #btnLogin {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 200px;
+        transition: box-shadow 0.2s;
+    }
+
+    .btnConnection:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnConnection:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+    }
+
+    .btnCreation:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnCreation:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+    }
+
+    footer p {
+        font-size: 10px;
+        font-weight:300;
+        text-transform: capitalize;
+    }
 </style>
 
 
 <div class=\"mb-4\">
-            <div class=\"text-center bg-primary text-white py-4\">
+            <div class=\"text-center text-black py-4 headLogin\">
                 <h1 class=\"display-4\">PingoMatch</h1>
                 <p class=\"lead\">Pôle de Rencontres</p>
             </div>
@@ -176,12 +400,19 @@ class __TwigTemplate_72e1a44c2ae1b0661758a34b456f5f8a extends Template
         </div>
         <div class=\"mb-3\">
             <label for=\"description\" class=\"form-label\">Description</label>
-            <textarea name=\"description\" class=\"form-control\"></textarea>
+            <textarea name=\"description\" class=\"form-control\" cols=\"40\" rows=\"5\"></textarea>
         </div>
-        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
+        <p style=\"color: red\">{{result}}</p>
+        <div id=\"btnLogin\">
+            <button type=\"submit\" class=\"btnConnection styleBtn\">Envoyer</button>
+            <button class=\"btnCreation styleBtn\"><a href=\"/signin\">Créer un compte<a/></button>
+        </div>
     </form>
-    <a href=\"/login\" class=\"btn btn-secondary\">J'ai déjà un compte</a>
 </div>
+
+<footer>
+    <p>© PingoMatch, Haute-Savoie, Annecy | 2023</p>
+</footer>
 
 <script>
     
