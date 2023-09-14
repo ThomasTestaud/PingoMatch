@@ -65,7 +65,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello ScrollPageController!";
+        echo "Scroll Page";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -87,20 +87,23 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         // line 6
         echo "<style>
 
+    body {
+        color: #000;
+    }
+
+    .zIndex {
+        z-index: 10;
+    }
+
     .example-wrapper {
         position: relative;
         max-width: 100vw;
         height: 100vh;
-        overflow: hidden;
-/*background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='500' height='560' preserveAspectRatio='none' viewBox='0 0 500 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1013%26quot%3b)' fill='none'%3e%3crect width='500' height='560' x='0' y='0' fill='rgba(76%2c 146%2c 219%2c 1)'%3e%3c/rect%3e%3cpath d='M32.79 531.61 a114.49 114.49 0 1 0 228.98 0 a114.49 114.49 0 1 0 -228.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M338.38%2c316.833C360.349%2c316.581%2c380.81%2c305.638%2c392.005%2c286.734C403.418%2c267.461%2c403.779%2c243.861%2c393.323%2c224.052C382.095%2c202.78%2c362.431%2c185.519%2c338.38%2c185.14C313.77%2c184.752%2c292.087%2c200.636%2c280.35%2c222.27C269.148%2c242.919%2c270.296%2c267.965%2c282.583%2c287.988C294.32%2c307.114%2c315.941%2c317.09%2c338.38%2c316.833' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M362.55 415.89 a106.68 106.68 0 1 0 213.36 0 a106.68 106.68 0 1 0 -213.36 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M262.44%2c218.845C296.129%2c218.629%2c328.166%2c201.557%2c344.258%2c171.959C359.717%2c143.526%2c352.85%2c109.891%2c337.025%2c81.66C320.767%2c52.656%2c295.671%2c24.876%2c262.44%2c25.994C230.395%2c27.072%2c211.927%2c58.535%2c196.071%2c86.403C180.465%2c113.83%2c164.647%2c144.808%2c178.784%2c173.02C194.051%2c203.487%2c228.363%2c219.063%2c262.44%2c218.845' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M323.65 54.61 a108.99 108.99 0 1 0 217.98 0 a108.99 108.99 0 1 0 -217.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M340.717%2c341.408C355.058%2c341.005%2c367.031%2c331.478%2c373.999%2c318.937C380.751%2c306.785%2c381.27%2c292.349%2c374.821%2c280.033C367.847%2c266.713%2c355.739%2c254.755%2c340.717%2c255.377C326.361%2c255.971%2c318.197%2c270.131%2c311.178%2c282.668C304.389%2c294.794%2c297.787%2c308.487%2c304.031%2c320.903C310.777%2c334.317%2c325.708%2c341.83%2c340.717%2c341.408' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1013'%3e%3crect width='500' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e\");        
-background-size: cover;*/
-            background-image: linear-gradient(to bottom, #d16ba5, #aa619d, #845790, #614c7f, #41406a, #394973, #2f527a, #255b7f, #1f81a4, #1ca9c4, #33d2de, #5ffbf1) ;
-
     }
 
     .scroll-card {
         position: absolute;
-        box-shadow: 2px 2px 2px;
+        box-shadow: rgba(0, 0, 0, 0.08) 2px 2px 2px;
         border-radius: 15px;
         background-color: white;
         width: 300px;
@@ -191,27 +194,39 @@ background-size: cover;*/
         width: 100px;
         border-radius: 50%;
         z-index: 3;
-        border: 8px solid #4F6D7A;
         font-weight: bold;
         color: #4F6D7A;
+        border: none;
         transition: transform 0.4s;
     }
 
     .btn-choice button:hover {
-        transform: scale(1.3) rotate(5deg);
+        transform: scale(1.1);
+    }
+
+    .btn-choice button:active {
+        transform: scale(0.95);
     }
 
     .btn-choice button svg {
         height: 60%;
     }
 
+    .btnlike-btn {
+        background-color:#EC3254;
+    }
+
+    .like-btn {
+        background-color: green;
+    }
+
 
     .btnlike-btn svg {
-        color: red;
+        color: white;
     }
 
     .like-btn svg {
-        color: #00ff11;
+        color: white;
     }
 
 
@@ -227,6 +242,19 @@ background-size: cover;*/
 
     .none {
         display: none;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+    }
+
+    footer p {
+        font-size: 10px;
+        font-weight:300;
+        text-transform: capitalize;
     }
 
     @keyframes animate {
@@ -252,14 +280,14 @@ background-size: cover;*/
 
 </style>
 
-<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+<nav class=\"navbar navbar-expand-lg navbar-white bg-white w-100 zIndex\">
     <div class=\"container\">
         <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
-            <ul class=\"navbar-nav ml-auto\">
+            <ul class=\"navbar-nav ml-auto \">
                 <li class=\"nav-item\">
                     <a class=\"nav-link btn\" href=\"/\">Accueil</a>
                 </li>
@@ -270,37 +298,37 @@ background-size: cover;*/
                     <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                    <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>
                 </li>
 
             </ul>
         </div>
     </div>
 </nav>
-<h2></h2>
+
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 201
+        // line 229
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 201, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 229, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 202
+            // line 230
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 203
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 203), "html", null, true);
+            // line 231
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 231), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 203), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 231), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 205
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 205), "html", null, true);
+            // line 233
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 233), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 206
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 206), "html", null, true);
+            // line 234
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 234), "html", null, true);
             echo "</p>
         </div>
     </div>
@@ -317,12 +345,16 @@ background-size: cover;*/
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 218
+        // line 246
         echo "    <p id=\"user-data\" style=\"display:none;\">";
-        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 218, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 246, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"animDisplay\"></div>
 </div>
+
+    <footer>
+        <p class=\"text-black\">© PingoMatch, Haute-Savoie, Annecy | 2023</p>
+    </footer>
 
 <script>
     const scrollCard = document.querySelectorAll('.scroll-card');
@@ -334,7 +366,8 @@ background-size: cover;*/
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const animDisplay = document.getElementById('animDisplay');
     let matchedArray = [];
-
+    let like = 0;
+    let francisCount =0;
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -362,8 +395,15 @@ background-size: cover;*/
                 }, 1100);
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
-            console.log(localStorage.getItem(\"matched\"));
+            //console.log(localStorage.getItem(\"matched\"));likeScore
+                if(pingoName[index].innerHTML === 'Francis') {
+                    francisCount++;
+                    localStorage.setItem(\"francisCount\", francisCount);
+                    
+                }
             }
+            like++;
+            localStorage.setItem(\"like\", like);
             
             likePingo();
         });
@@ -518,32 +558,35 @@ background-size: cover;*/
 
     public function getDebugInfo()
     {
-        return array (  321 => 218,  303 => 206,  299 => 205,  292 => 203,  289 => 202,  285 => 201,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  349 => 246,  331 => 234,  327 => 233,  320 => 231,  317 => 230,  313 => 229,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello ScrollPageController!{% endblock %}
+{% block title %}Scroll Page{% endblock %}
 
 {% block body %}
 <style>
+
+    body {
+        color: #000;
+    }
+
+    .zIndex {
+        z-index: 10;
+    }
 
     .example-wrapper {
         position: relative;
         max-width: 100vw;
         height: 100vh;
-        overflow: hidden;
-/*background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='500' height='560' preserveAspectRatio='none' viewBox='0 0 500 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1013%26quot%3b)' fill='none'%3e%3crect width='500' height='560' x='0' y='0' fill='rgba(76%2c 146%2c 219%2c 1)'%3e%3c/rect%3e%3cpath d='M32.79 531.61 a114.49 114.49 0 1 0 228.98 0 a114.49 114.49 0 1 0 -228.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M338.38%2c316.833C360.349%2c316.581%2c380.81%2c305.638%2c392.005%2c286.734C403.418%2c267.461%2c403.779%2c243.861%2c393.323%2c224.052C382.095%2c202.78%2c362.431%2c185.519%2c338.38%2c185.14C313.77%2c184.752%2c292.087%2c200.636%2c280.35%2c222.27C269.148%2c242.919%2c270.296%2c267.965%2c282.583%2c287.988C294.32%2c307.114%2c315.941%2c317.09%2c338.38%2c316.833' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M362.55 415.89 a106.68 106.68 0 1 0 213.36 0 a106.68 106.68 0 1 0 -213.36 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M262.44%2c218.845C296.129%2c218.629%2c328.166%2c201.557%2c344.258%2c171.959C359.717%2c143.526%2c352.85%2c109.891%2c337.025%2c81.66C320.767%2c52.656%2c295.671%2c24.876%2c262.44%2c25.994C230.395%2c27.072%2c211.927%2c58.535%2c196.071%2c86.403C180.465%2c113.83%2c164.647%2c144.808%2c178.784%2c173.02C194.051%2c203.487%2c228.363%2c219.063%2c262.44%2c218.845' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M323.65 54.61 a108.99 108.99 0 1 0 217.98 0 a108.99 108.99 0 1 0 -217.98 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M340.717%2c341.408C355.058%2c341.005%2c367.031%2c331.478%2c373.999%2c318.937C380.751%2c306.785%2c381.27%2c292.349%2c374.821%2c280.033C367.847%2c266.713%2c355.739%2c254.755%2c340.717%2c255.377C326.361%2c255.971%2c318.197%2c270.131%2c311.178%2c282.668C304.389%2c294.794%2c297.787%2c308.487%2c304.031%2c320.903C310.777%2c334.317%2c325.708%2c341.83%2c340.717%2c341.408' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1013'%3e%3crect width='500' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e\");        
-background-size: cover;*/
-            background-image: linear-gradient(to bottom, #d16ba5, #aa619d, #845790, #614c7f, #41406a, #394973, #2f527a, #255b7f, #1f81a4, #1ca9c4, #33d2de, #5ffbf1) ;
-
     }
 
     .scroll-card {
         position: absolute;
-        box-shadow: 2px 2px 2px;
+        box-shadow: rgba(0, 0, 0, 0.08) 2px 2px 2px;
         border-radius: 15px;
         background-color: white;
         width: 300px;
@@ -634,27 +677,39 @@ background-size: cover;*/
         width: 100px;
         border-radius: 50%;
         z-index: 3;
-        border: 8px solid #4F6D7A;
         font-weight: bold;
         color: #4F6D7A;
+        border: none;
         transition: transform 0.4s;
     }
 
     .btn-choice button:hover {
-        transform: scale(1.3) rotate(5deg);
+        transform: scale(1.1);
+    }
+
+    .btn-choice button:active {
+        transform: scale(0.95);
     }
 
     .btn-choice button svg {
         height: 60%;
     }
 
+    .btnlike-btn {
+        background-color:#EC3254;
+    }
+
+    .like-btn {
+        background-color: green;
+    }
+
 
     .btnlike-btn svg {
-        color: red;
+        color: white;
     }
 
     .like-btn svg {
-        color: #00ff11;
+        color: white;
     }
 
 
@@ -670,6 +725,19 @@ background-size: cover;*/
 
     .none {
         display: none;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+    }
+
+    footer p {
+        font-size: 10px;
+        font-weight:300;
+        text-transform: capitalize;
     }
 
     @keyframes animate {
@@ -695,14 +763,14 @@ background-size: cover;*/
 
 </style>
 
-<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+<nav class=\"navbar navbar-expand-lg navbar-white bg-white w-100 zIndex\">
     <div class=\"container\">
         <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
-            <ul class=\"navbar-nav ml-auto\">
+            <ul class=\"navbar-nav ml-auto \">
                 <li class=\"nav-item\">
                     <a class=\"nav-link btn\" href=\"/\">Accueil</a>
                 </li>
@@ -713,14 +781,14 @@ background-size: cover;*/
                     <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn btn-danger\" href=\"/login\">Déconnexion</a>
+                    <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>
                 </li>
 
             </ul>
         </div>
     </div>
 </nav>
-<h2></h2>
+
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     {% for item in users %}
@@ -744,6 +812,10 @@ background-size: cover;*/
     <div id=\"animDisplay\"></div>
 </div>
 
+    <footer>
+        <p class=\"text-black\">© PingoMatch, Haute-Savoie, Annecy | 2023</p>
+    </footer>
+
 <script>
     const scrollCard = document.querySelectorAll('.scroll-card');
     const likeBtn = document.querySelectorAll('.like-btn');
@@ -754,7 +826,8 @@ background-size: cover;*/
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const animDisplay = document.getElementById('animDisplay');
     let matchedArray = [];
-
+    let like = 0;
+    let francisCount =0;
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -782,8 +855,15 @@ background-size: cover;*/
                 }, 1100);
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem(\"matched\", matchedArray);
-            console.log(localStorage.getItem(\"matched\"));
+            //console.log(localStorage.getItem(\"matched\"));likeScore
+                if(pingoName[index].innerHTML === 'Francis') {
+                    francisCount++;
+                    localStorage.setItem(\"francisCount\", francisCount);
+                    
+                }
             }
+            like++;
+            localStorage.setItem(\"like\", like);
             
             likePingo();
         });

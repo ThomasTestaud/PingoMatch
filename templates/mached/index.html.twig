@@ -143,6 +143,33 @@
     const popUp = document.getElementById('pop-up');
     const userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const matched = localStorage.getItem('matched').split(',').map(item => item.trim());
+    
+    let score = matched.length;
+    let highestScore = localStorage.getItem("HighestScore");
+    let likeScore = localStorage.getItem("like");
+    let francisCount = localStorage.getItem("francisCount");
+    let HfrancisCount = localStorage.getItem("HfrancisCount");
+
+    console.log("Avec "+likeScore+" likes");
+    console.log("Francis count = "+ francisCount);
+    if(francisCount > HfrancisCount) {
+        console.log('Vous avez battu le Highest Francis Scord !!!');
+        console.log("Nouveau Highest Francis Score " + francisCount);
+        console.log("Ancien Highest Francis Score : " + HfrancisCount);
+        localStorage.setItem("HfrancisCount", francisCount);
+    }else {
+    console.log("Vous avez une Score Francis de " + francisCount + " matchs !");
+    console.log("Highest Francis Score : " + HfrancisCount);
+    }
+    if(score > highestScore) {
+        console.log('Vous avez battu le Highest Scord !!!');
+        console.log("Nouveau Highest Score " + matched.length);
+        console.log("Ancien Highest Score : " + highestScore);
+        localStorage.setItem("HighestScore", matched.length);
+    }else {
+    console.log("Vous avez une Score de " + matched.length + " matchs !");
+    console.log("Highest Score : " + highestScore);
+    }
 
     let list = "";
 

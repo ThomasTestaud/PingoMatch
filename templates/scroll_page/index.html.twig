@@ -273,7 +273,8 @@
     let userData = JSON.parse(document.getElementById('user-data').innerHTML);
     const animDisplay = document.getElementById('animDisplay');
     let matchedArray = [];
-
+    let like = 0;
+    let francisCount =0;
     
     likeBtn.forEach((el, index) => {
         el.addEventListener('click', () => {
@@ -301,8 +302,15 @@
                 }, 1100);
             matchedArray.push(pingoName[index].innerHTML);
             localStorage.setItem("matched", matchedArray);
-            console.log(localStorage.getItem("matched"));
+            //console.log(localStorage.getItem("matched"));likeScore
+                if(pingoName[index].innerHTML === 'Francis') {
+                    francisCount++;
+                    localStorage.setItem("francisCount", francisCount);
+                    
+                }
             }
+            like++;
+            localStorage.setItem("like", like);
             
             likePingo();
         });
