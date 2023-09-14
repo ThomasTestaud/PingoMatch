@@ -87,6 +87,18 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
         // line 6
         echo "<style>
 
+    .hoverNavA {
+        color: #000;
+    }
+
+    .hoverNavA:hover {
+        background-color: rgba(219, 233, 238, 0.5);
+    }
+
+    .titleName {
+        font-family: 'Pacifico', cursive;
+    }
+
     #display {
         display: flex;
         flex-wrap: wrap;
@@ -123,7 +135,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
     }
 
     ";
-        // line 46
+        // line 58
         echo "
     img {
         height: 140px;
@@ -177,20 +189,20 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 </style>
 <nav class=\"navbar navbar-expand-lg navbar-white bg-white\">
     <div class=\"container\">
-        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <a class=\"navbar-brand titleName\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
             <ul class=\"navbar-nav ml-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/mached\">Vos matchs</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>
@@ -202,8 +214,8 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 </nav>
 <div class=\"example-wrapper\">
     <p id=\"user-data\" style=\"display:none;\">";
-        // line 123
-        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 123, $this->source); })()), "html", null, true);
+        // line 135
+        echo twig_escape_filter($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 135, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"display\">
     </div>
@@ -325,7 +337,7 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 
     public function getDebugInfo()
     {
-        return array (  206 => 123,  127 => 46,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  218 => 135,  139 => 58,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -336,6 +348,18 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 
 {% block body %}
 <style>
+
+    .hoverNavA {
+        color: #000;
+    }
+
+    .hoverNavA:hover {
+        background-color: rgba(219, 233, 238, 0.5);
+    }
+
+    .titleName {
+        font-family: 'Pacifico', cursive;
+    }
 
     #display {
         display: flex;
@@ -428,20 +452,20 @@ class __TwigTemplate_2aefbaa481ad4f69a9a4e073cc25af1c extends Template
 </style>
 <nav class=\"navbar navbar-expand-lg navbar-white bg-white\">
     <div class=\"container\">
-        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <a class=\"navbar-brand titleName\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
             <ul class=\"navbar-nav ml-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/mached\">Vos matchs</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>

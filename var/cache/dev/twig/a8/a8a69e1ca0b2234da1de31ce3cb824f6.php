@@ -128,12 +128,12 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
 
     p {
         font-family: 'Poppins', sans-serif;
+        font-weight: bold;
     }
 
     h2, h3 {
         font-family: 'Poppins', sans-serif;
         font-size: 17px;
-        font-weight: bold;
     }
 
     .titleProfile {
@@ -281,12 +281,12 @@ class __TwigTemplate_fcbaa8d6f547324caacd32113f6ead27 extends Template
 
     p {
         font-family: 'Poppins', sans-serif;
+        font-weight: bold;
     }
 
     h2, h3 {
         font-family: 'Poppins', sans-serif;
         font-size: 17px;
-        font-weight: bold;
     }
 
     .titleProfile {

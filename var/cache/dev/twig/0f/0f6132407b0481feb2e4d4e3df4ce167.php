@@ -91,6 +91,18 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         color: #000;
     }
 
+    .hoverNavA {
+        color: #000;
+    }
+
+    .hoverNavA:hover {
+        background-color: rgba(219, 233, 238, 0.5);
+    }
+
+    .titleName {
+        font-family: 'Pacifico', cursive;
+    }
+
     .zIndex {
         z-index: 10;
     }
@@ -282,20 +294,20 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
 <nav class=\"navbar navbar-expand-lg navbar-white bg-white w-100 zIndex\">
     <div class=\"container\">
-        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <a class=\"navbar-brand titleName\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
             <ul class=\"navbar-nav ml-auto \">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/mached\">Vos matchs</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>
@@ -309,26 +321,26 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 <div class=\"example-wrapper\">
     <p class=\"text-center pt-5\">Vous avez parcouru tous les utilisateurs...</p>
     ";
-        // line 229
+        // line 241
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 229, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 241, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 230
+            // line 242
             echo "    <div class=\"scroll-card card border-secondary mb-3\">
         <img src=\"";
-            // line 231
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 231), "html", null, true);
+            // line 243
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "img", [], "any", false, false, false, 243), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 231), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 243), "html", null, true);
             echo "\">
         <div class=\"card-body\">
             <h2 class=\"card-title pingo-name\">";
-            // line 233
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 233), "html", null, true);
+            // line 245
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Name", [], "any", false, false, false, 245), "html", null, true);
             echo "</h2>
             <p class=\"card-text\">";
-            // line 234
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 234), "html", null, true);
+            // line 246
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Description", [], "any", false, false, false, 246), "html", null, true);
             echo "</p>
         </div>
     </div>
@@ -345,9 +357,9 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 246
+        // line 258
         echo "    <p id=\"user-data\" style=\"display:none;\">";
-        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 246, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["usersJson"]) || array_key_exists("usersJson", $context) ? $context["usersJson"] : (function () { throw new RuntimeError('Variable "usersJson" does not exist.', 258, $this->source); })()), "html", null, true);
         echo "<p>
     <div id=\"animDisplay\"></div>
 </div>
@@ -558,7 +570,7 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     public function getDebugInfo()
     {
-        return array (  349 => 246,  331 => 234,  327 => 233,  320 => 231,  317 => 230,  313 => 229,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  361 => 258,  343 => 246,  339 => 245,  332 => 243,  329 => 242,  325 => 241,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -572,6 +584,18 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
     body {
         color: #000;
+    }
+
+    .hoverNavA {
+        color: #000;
+    }
+
+    .hoverNavA:hover {
+        background-color: rgba(219, 233, 238, 0.5);
+    }
+
+    .titleName {
+        font-family: 'Pacifico', cursive;
     }
 
     .zIndex {
@@ -765,20 +789,20 @@ class __TwigTemplate_409d43030cba83fb328ea21d6efea7ab extends Template
 
 <nav class=\"navbar navbar-expand-lg navbar-white bg-white w-100 zIndex\">
     <div class=\"container\">
-        <a class=\"navbar-brand\" href=\"/\">PingoMatch</a>
+        <a class=\"navbar-brand titleName\" href=\"/\">PingoMatch</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
             <ul class=\"navbar-nav ml-auto \">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/\">Accueil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/mached\">Vos matchs</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/mached\">Vos matchs</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link btn\" href=\"/profile\">Votre profil</a>
+                    <a class=\"nav-link btn hoverNavA\" href=\"/profile\">Votre profil</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link btn btn-danger\" href=\"/home\">Déconnexion</a>
