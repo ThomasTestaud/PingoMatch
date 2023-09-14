@@ -3,19 +3,19 @@
         "Name": "Jessy",
         "img": "https:\/\/robotdog.thomastestaud.com\/mancho\/i.png",
         "Password": "password",
-        "Description": "J'aime les glaces"
+        "Description": "Il fait froid ici... Et toi ?"
     },
     {
         "Name": "Bob",
         "img": "https:\/\/robotdog.thomastestaud.com\/mancho\/h.png",
         "Password": "password",
-        "Description": "Je fais de la luge"
+        "Description": "Il fait froid ici... Et toi ?"
     },
     {
         "Name": "Johana",
         "img": "https:\/\/robotdog.thomastestaud.com\/mancho\/r.png",
         "Password": "password",
-        "Description": "J'aime pas le ski"
+        "Description": "Il fait froid ici... Et toi ?"
     },
     {
         "Name": "Francis",
@@ -51,7 +51,7 @@
         "Name": "Angela",
         "img": "https:\/\/robotdog.thomastestaud.com\/mancho\/r.png",
         "Password": "oassword",
-        "Description": "La plong\u00e9 sous glace, pas mal... Mais je pr\u00e9f\u00e8re le poisson !"
+        "Description": "La plongee sous glace, pas mal... Mais je prefrere le poisson !"
     },
     {
         "Name": "Andre",
@@ -105,6 +105,6 @@
         "Name": "Jean-Bernard",
         "img": "https:\/\/robotdog.thomastestaud.com\/mancho\/r.png",
         "Password": "oassword",
-        "Description": "La plong\u00e9 sous glace, pas mal... Mais je pr\u00e9f\u00e8re le poisson !"
+        "Description": "La plongee sous glace, pas mal... Mais je prefrere le poisson !"
     }
 ]

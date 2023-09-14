@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LoginController!{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block body %}
 <style>
@@ -8,7 +8,6 @@
     body {
         height: 100vh;
         font-family: 'Poppins', sans-serif;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='3840' height='2160' preserveAspectRatio='none' viewBox='0 0 3840 2160'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1402%26quot%3b)' fill='none'%3e%3crect width='3840' height='2160' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1403%26quot%3b)'%3e%3c/rect%3e%3cpath d='M0 0L451.46 0L0 368.98z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M0 368.98L451.46 0L1125.16 0L0 912.35z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M0 912.35L1125.16 0L1428.5100000000002 0L0 923.52z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M0 923.52L1428.5100000000002 0L3058.2300000000005 0L0 1156.87z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M3840 2160L2636.7200000000003 2160L3840 1766.45z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M3840 1766.45L2636.7200000000003 2160L2196.7300000000005 2160L3840 1116.38z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M3840 1116.3799999999999L2196.73 2160L1564 2160L3840 425.6899999999998z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M3840 425.6899999999998L1564 2160L870.32 2160L3840 132.17999999999984z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1402'%3e%3crect width='3840' height='2160' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='89.06%25' y1='119.44%25' x2='10.94%25' y2='-19.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1403'%3e%3cstop stop-color='rgba(79%2c 109%2c 122%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0.51'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");        
     }
 
     .example-wrapper { 
@@ -33,7 +32,7 @@
         padding: 2px 6px; 
     }
 
-    a {
+    a, .styleBtn {
         text-decoration: none;
         color: #fff;
         font-family: 'Poppins', sans-serif;
@@ -86,9 +85,10 @@
     }
 
     footer {
-        display: flex;
-        justify-content: center;
-        margin-top: 150px;
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, -2%);
     }
 
     footer p {
@@ -116,14 +116,14 @@
         <p id="user-data" style="display:none;">{{users}}</p>
         <p style="color:red;" id="errors"></p>
         <div id="btnLogin">
-            <button id="connect" class="btnConnection"><a href:"#">Connexion</a></button>
-            <button class="btnCreation"><a href="/signin">Créer un compte<a/></button>
+            <button id="connect" class="btnConnection styleBtn">Connexion</button>
+            <a href="/signin"><button class="btnCreation styleBtn">Créer un compte</button><a/>
         <div>
     </div>
 </div>
 
 <footer>
-    <p>Tous droits réservés © PingoMatch, Haute-Savoie, Annecy | 2023</p>
+    <p>© PingoMatch, Haute-Savoie, Annecy | 2023</p>
 </footer>
 
 

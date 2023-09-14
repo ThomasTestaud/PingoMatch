@@ -10,7 +10,7 @@
         height: 100vh;
     }
 
-    a {
+    a, .styleBtn {
         text-decoration: none;
         color: #fff;
         font-family: 'Poppins', sans-serif;
@@ -39,6 +39,13 @@
         font-size: 50px;
         color: #fff;
     }
+
+    .titleLogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     
     #btnHome {
         display: flex;
@@ -66,16 +73,33 @@
         background-image: linear-gradient(to left bottom, #f3a07c, #f29b75, #f2966e, #f19167, #f08c60, #ef875a, #ef8354, #ee7e4e, #ee7947, #ed7440, #ed6f39, #ec6a32);
     }
 
+    footer {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+    }
+
+    footer p {
+        font-size: 10px;
+        font-weight:300;
+        text-transform: capitalize;
+    }
+
 </style>
 
 <div class="example-wrapper">
-    <div>
+    <div class="titleLogo">
         <img src="https://robotdog.thomastestaud.com/mancho/Logo-PingoMatch_2.png" class="logoHome" />
         <h1 id="titleHome">Pingo Match</h1>
     </div>
     <div id="btnHome">
-        <button class="btnConnection"><a href="/login">Connexion</a></button>
-        <button class="btnCreation"><a href="/signin">Créer un compte<a/></button>
+        <a href="/login"><button class="btnConnection styleBtn">Connexion</button><a/>
+        <a href="/signin"><button class="btnCreation styleBtn">Créer un compte</button><a/>
     </div>
 </div>
+
+<footer>
+    <p class="text-white">© PingoMatch, Haute-Savoie, Annecy | 2023</p>
+</footer>
 {% endblock %}
