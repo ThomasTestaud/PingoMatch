@@ -61,6 +61,7 @@
         border-radius: 30px;
         height: 45px;
         width: 220px;
+        transition: box-shadow 0.2s;
     }
 
     .btnConnection {
@@ -71,6 +72,24 @@
         background-color: #EF8557;
         background-image: linear-gradient(to left bottom, #f3a07c, #f29b75, #f2966e, #f19167, #f08c60, #ef875a, #ef8354, #ee7e4e, #ee7947, #ed7440, #ed6f39, #ec6a32);
     }
+
+    .btnConnection:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnConnection:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+    }
+
+    .btnCreation:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnCreation:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+    }
+
+
     .headLogin {
         height:200px;
     }

@@ -106,5 +106,11 @@
         "img": "https:\/\/robotdog.thomastestaud.com\/mancho\/r.png",
         "Password": "oassword",
         "Description": "La plongee sous glace, pas mal... Mais je prefrere le poisson !"
+    },
+    {
+        "Name": "Maxime",
+        "img": "https:\/\/robotdog.thomastestaud.com\/mancho\/h.png",
+        "Password": "password",
+        "Description": "J'aime beaucoup les phoques et la glace !"
     }
 ]

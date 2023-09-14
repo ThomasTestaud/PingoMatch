@@ -62,10 +62,27 @@
         border-radius: 30px;
         height: 45px;
         width: 220px;
+        transition: box-shadow 0.2s;
     }
 
     .btnConnection {
         background-image: linear-gradient(to left bottom, #ef5773, #ef516d, #ee4b68, #ee4462, #ed3d5c, #ec3857, #ea3253, #e92c4e, #e72749, #e52244, #e21c3f, #e0153a);
+    }
+
+    .btnConnection:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnConnection:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+    }
+
+    .btnCreation:hover {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .btnCreation:active {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
     }
 
     .btnCreation {

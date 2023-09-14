@@ -16,7 +16,7 @@ class SignInController extends AbstractController
         $users = json_decode(file_get_contents($jsonFilePath));
 
         $return = "";
-        if(isset($_POST['login']) && isset($_POST['password'])) {
+        if(!empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['description'])) {
             $users[] = [
                 "Name" => $_POST['login'],
                 "img" => "https://robotdog.thomastestaud.com/mancho/h.png",
@@ -28,7 +28,9 @@ class SignInController extends AbstractController
 
             header("Location: /login");
             exit;
-        } else {
+        } else if(!isset($_POST['login']) && !isset($_POST['password']) && !isset($_POST['description'])) {
+            $return = "";
+        } else if(empty($_POST['login']) || empty($_POST['password']) || empty($_POST['description'])) {
             $return = "Vous devez remplir tout les champs";
         }
 
