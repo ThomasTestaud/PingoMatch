@@ -7,8 +7,22 @@
 
     body {
         background-image: linear-gradient(to right top, #4f6d7a,#65769e, #a275a9, #dd718d, #ef8557);
+        background-size: 400% 400%;
         height: 100vh;
+        animation: gradient 10s ease infinite;
     }
+
+    @keyframes gradient {
+   0% {
+       background-position: 0% 50%;
+       }
+    50% {
+       background-position: 100% 50%;
+       }
+   100% {
+       background-position: 0% 50%;
+       }
+   }    
 
     a, .styleBtn {
         text-decoration: none;
